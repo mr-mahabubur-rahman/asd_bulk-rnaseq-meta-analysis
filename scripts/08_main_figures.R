@@ -103,9 +103,9 @@ cmp <- read_csv("results/tables/cilia/cilia_adjusted_comparison.csv", show_col_t
   filter(set %in% c("CURATED_MOTILE_CILIA", "CURATED_PRIMARY_CILIA")) |>
   mutate(signed = if_else(camera_dir == "Down", -1, 1) * -log10(camera_p),
          p_lower_one_sided = if_else(camera_dir == "Down", camera_p / 2, 1 - camera_p / 2),
-         set = factor(recode(set, CURATED_MOTILE_CILIA = "Motile-cilia set (H2 primary test)",
+         set = factor(recode(set, CURATED_MOTILE_CILIA = "Motile-cilia set",
                              CURATED_PRIMARY_CILIA = "Primary-cilia set (comparison)"),
-                      levels = c("Motile-cilia set (H2 primary test)",
+                      levels = c("Motile-cilia set",
                                  "Primary-cilia set (comparison)")),
          version = factor(recode(version, unadjusted = "Unadjusted", adj_foxj1 = "+ FOXJ1",
                                  adj_motile = "+ motile-cilia score (circular check)"),
