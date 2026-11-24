@@ -16,6 +16,10 @@ bioconductor-biocparallel = ">=1.44.0,<2"
 r-metafor = ">=5.0_1,<6"
 bioconductor-fgsea = ">=1.36.2,<2"
 r-msigdbr = ">=26.1.1,<27"
+r-ggrepel = ">=0.9.8,<0.10"
+r-upsetr = ">=1.4.1,<2"
+r-igraph = ">=2.3.4,<3"
+r-ggraph = ">=2.2.2,<3"
 
 [tasks]
 geo-metadata   = "mkdir -p logs && Rscript scripts/00b_geo_metadata.R 2>&1 | tee logs/00b_geo_metadata.log"
