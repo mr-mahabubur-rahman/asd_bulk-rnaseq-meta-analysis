@@ -1,0 +1,7 @@
+set,full,adjusted for iPSC source,without 101/102
+HALLMARK_INTERFERON_ALPHA_RESPONSE,"Down, p = 0.00051","Down, p = 1.2e-09","Down, p = 7.3e-11"
+HALLMARK_INTERFERON_GAMMA_RESPONSE,"Down, p = 0.017","Down, p = 0.00024","Down, p = 3.8e-05"
+HALLMARK_MYC_TARGETS_V1,"Up, p = 0.2","Down, p = 0.0044","Down, p = 0.21"
+REACTOME_EUKARYOTIC_TRANSLATION_INITIATION,"Up, p = 0.008","Down, p = 0.14","Up, p = 0.24"
+GOBP_AXONEME_ASSEMBLY,"Down, p = 0.0026","Down, p = 0.34","Down, p = 0.086"
+CURATED_MOTILE_CILIA,"Down, p = 0.00058","Down, p = 0.26","Down, p = 0.032"

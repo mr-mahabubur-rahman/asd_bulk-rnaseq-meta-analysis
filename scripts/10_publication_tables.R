@@ -291,29 +291,65 @@ message("  wrote Main_Tables.docx")
 message("Supplementary tables ...")
 rd <- function(path) if (file.exists(path)) read_csv(path, show_col_types = FALSE) else
   tibble(note = paste("file not found:", path))
-round_df <- function(df, d = 4) df |> mutate(across(where(is.double), \(x) signif(x, d)))
+# round only non-integer columns (signif() on counts such as 14574 would give 14570)
+round_df <- function(df, d = 4) df |>
+  mutate(across(where(is.double), \(x) ifelse(!is.na(x) & x == round(x), x, signif(x, d))))
 
+# readable column headers for the supplement
+hdr <- c(analysis = "Analysis", dataset = "Analysis", samples = "Samples", donors = "Donors",
+         genes_tested = "Genes tested", padj_lt_0.05 = "Genes FDR < 0.05",
+         padj_lt_0.05_lfc_gt_1 = "Genes FDR < 0.05 and |log2FC| > 1", min_padj = "Smallest FDR",
+         min_fdr = "Smallest FDR", pi1 = "π1 (share non-null)", p_lt_0.01 = "Genes p < 0.01",
+         expected_0.01 = "Expected p < 0.01 (null)", datasets = "Cohorts",
+         fdr_lt_0.05 = "Genes FDR < 0.05 (random effects)", robust = "Robust genes",
+         stouffer_fdr_lt_0.05 = "Genes FDR < 0.05 (Stouffer)", Gene_ID = "Ensembl gene ID",
+         Gene_Symbol = "Gene", symbol = "Gene", gene = "Gene", k = "Cohorts",
+         same_sign = "Same direction in all cohorts", est = "Pooled log2FC", se = "SE",
+         ci_lb = "95% CI lower", ci_ub = "95% CI upper", p = "p", fdr = "FDR", tau2 = "τ²",
+         I2 = "I² (%)", st_z = "Stouffer z", st_p = "Stouffer p", stouffer_fdr = "Stouffer FDR",
+         score = "Marker score", n_asd = "ASD donors", n_ctrl = "Control donors",
+         diff_asd_minus_ctrl = "ASD − control (SD)", t_p = "t-test p", wilcox_p = "Wilcoxon p",
+         label = "Gene set", theme = "Theme", ranking = "Ranking", NES = "NES (fgsea)",
+         pval = "fgsea p", camera_dir = "cameraPR direction", camera_p = "cameraPR p",
+         camera_fdr = "cameraPR FDR", inter_gene_cor = "Inter-gene correlation", set = "Gene set",
+         n_genes = "Genes in set", direction = "Direction", mean_logCPM = "Mean log2 CPM",
+         asd_minus_ctrl = "ASD − control (log2 CPM)", p_donor_t = "Donor-level t-test p",
+         intersection = "Intersection", observed = "Observed", expected = "Expected",
+         ratio = "Observed / expected", perm_p_greater = "Permutation p", universe = "Genes in universe",
+         pooled_z = "Pooled z", cilia = "Cilia-annotated", stage = "Culture",
+         mean_ctrl = "Control mean (SD)", mean_asd = "ASD mean (SD)",
+         mean_shift = "Sorted − mixed (SD)", p_paired = "Paired t-test p", pair = "Comparison",
+         spearman_all = "Spearman ρ, all genes", spearman_top500 = "Spearman ρ, top-500 genes",
+         asd_dir_other = "Direction in other cohorts", genes = "Genes",
+         mean_sorting_t = "Mean sorting t", share_depleted_by_sorting = "Share depleted by sorting",
+         share_same_dir_mixed = "Same direction, mixed cultures",
+         share_same_dir_sorted = "Same direction, sorted neurons", metric = "Metric", value = "Value")
+nice <- function(df) { names(df) <- coalesce(unname(hdr[names(df)]), names(df)); df }
+
+c1_cam <- rd("results/tables/sensitivity/check1_cameraPR.csv")
 supp <- list(
   S1_DE_summary = list(
-    "Per-model differential expression summary: samples, donors, genes tested, FDR hits and π1 (share of non-null genes).",
+    "Per-model differential expression summary: samples, donors, genes tested, FDR hits and π1 (share of non-null genes). Primary models: GSE67528_NPC, GSE67528_Neuron, GSE124308_both, GSE142670_NPC, GSE142670_Neuron; the others are sensitivity or per-time-point models.",
     rd("results/tables/DE_dream/summary.csv") |>
       left_join(rd("results/tables/DE_dream/diagnostics_pi1.csv") |>
                   select(any_of(c("analysis", "pi1", "p_lt_0.01", "expected_0.01"))),
                 by = "analysis")),
   S2_meta_summary = list(
-    "Random-effects meta-analysis of neurons (REML, Hartung–Knapp ad hoc): primary (mixed GSE142670 neurons) and sensitivity (sorted neurons).",
+    "Random-effects meta-analysis of neurons (REML, Hartung–Knapp ad hoc): primary (mixed GSE142670 neurons) and sensitivity (sorted neurons). With three cohorts the test has two degrees of freedom and is very conservative.",
     rd("results/tables/meta/meta_summary.csv")),
   S3_meta_top100 = list(
-    "Top 100 genes of the primary neuron meta-analysis by random-effects p (none reaches FDR < 0.05). est = pooled log2FC; st_z/st_p = weighted Stouffer.",
+    "Top 100 genes of the primary neuron meta-analysis by random-effects p (none reaches FDR < 0.05).",
     rd("results/tables/meta/neuron_primary_REM.csv") |> arrange(p) |> head(100) |>
-      select(any_of(c("Gene_ID", "Gene_Symbol", "k", "same_sign", "est", "se", "ci_lb", "ci_ub",
+      select(any_of(c("Gene_Symbol", "Gene_ID", "k", "same_sign", "est", "se", "ci_lb", "ci_ub",
                       "p", "fdr", "tau2", "I2", "st_z", "st_p", "stouffer_fdr")))),
   S4_composition = list(
     "Cell-composition marker scores, ASD vs control on donor means (difference in SD units; t-test and Wilcoxon).",
     rd("results/tables/composition/composition_tests_donor_level.csv")),
   S5_gene_sets_all = list(
-    "fgsea and cameraPR results for the 12 gene sets of Table 3, all rankings.",
-    rd("results/tables/figures/Fig3_enrichment_fgsea_cameraPR.csv")),
+    "fgsea and cameraPR results for the 12 gene sets of Table 3, all rankings (pooled rankings use the weighted Stouffer z).",
+    rd("results/tables/figures/Fig3_enrichment_fgsea_cameraPR.csv") |>
+      select(any_of(c("theme", "label", "ranking", "NES", "pval", "camera_dir", "camera_p",
+                      "camera_fdr")))),
   S6_cilia_cameraPR = list(
     "cameraPR per cohort for GO cilia sets, curated motile and primary cilia sets and comparison sets, at inter-gene correlation 0.01 and 0.05.",
     rd("results/tables/cilia/cameraPR_per_dataset.csv")),
@@ -321,53 +357,79 @@ supp <- list(
     "Ependymal / choroid-plexus marker expression (FOXJ1, TTR, AQP1, CLIC6, KCNJ13, S100B) by cohort and diagnosis.",
     rd("results/tables/cilia/ependymal_markers.csv")),
   S8_sensitivity_GSE124308 = list(
-    "GSE124308 without control donors 101 and 102: gene-level agreement with the full model, and cameraPR for key sets (full, iPSC-source-adjusted, without 101/102).",
-    bind_rows(rd("results/tables/sensitivity/check1_gene_level.csv") |>
-                pivot_longer(everything(), names_to = "metric", values_to = "value",
-                             values_transform = as.character) |>
-                mutate(section = "gene level", .before = 1),
-              rd("results/tables/sensitivity/check1_cameraPR.csv") |>
-                transmute(section = "cameraPR", metric = paste(set, version, sep = " | "),
-                          value = paste0(direction, ", p = ", signif(p, 3))))),
+    "GSE124308 without control donors 101 and 102 (fibroblast-derived; separate on PC2, Fig. S1B).",
+    list(
+      "A. Gene-level agreement between the full model and the model without 101/102" =
+        rd("results/tables/sensitivity/check1_gene_level.csv") |>
+        pivot_longer(everything(), names_to = "metric", values_to = "value") |>
+        mutate(metric = recode(metric, genes_both = "Genes in both models",
+                               spearman_t = "Spearman ρ of moderated t",
+                               same_sign_share = "Share with the same direction",
+                               p_lt_0.05_full = "Genes p < 0.05, full model",
+                               p_lt_0.05_reduced = "Genes p < 0.05, without 101/102",
+                               fdr_lt_0.05_reduced = "Genes FDR < 0.05, without 101/102")),
+      "B. Leave-one-cohort-out replication with the reduced GSE124308 model" =
+        rd("results/tables/sensitivity/check1_replication.csv"),
+      "C. cameraPR (inter-gene correlation 0.05): direction in ASD and p" =
+        c1_cam |> mutate(cell = paste0(direction, ", p = ", signif(p, 2))) |>
+        select(set, version, cell) |> pivot_wider(names_from = version, values_from = cell))),
   S9_sorted_vs_mixed = list(
-    "GSE142670 FACS-sorted vs mixed neuronal cultures: composition by diagnosis, sorted-minus-mixed shift (same donors), correlations, and the top-500 replication genes by direction.",
-    bind_rows(
-      rd("results/tables/sensitivity/check2_composition_asd_vs_ctrl.csv") |>
-        mutate(section = "composition, ASD vs control", .before = 1),
-      rd("results/tables/sensitivity/check2_composition_sorted_minus_mixed.csv") |>
-        mutate(section = "composition, sorted minus mixed", .before = 1),
-      rd("results/tables/sensitivity/check2_correlations.csv") |>
-        mutate(section = "Spearman correlations", .before = 1),
-      rd("results/tables/sensitivity/check2_top500_by_direction.csv") |>
-        mutate(section = "top-500 replication genes", .before = 1))),
+    "GSE142670 FACS-sorted vs mixed neuronal cultures (sorted neurons: 3 ASD and 3 control donors).",
+    list(
+      "A. Composition scores by diagnosis (SD units across all neuron samples; donor means)" =
+        rd("results/tables/sensitivity/check2_composition_asd_vs_ctrl.csv"),
+      "B. What sorting changes: sorted minus mixed, same donors (n = 6)" =
+        rd("results/tables/sensitivity/check2_composition_sorted_minus_mixed.csv"),
+      "C. Correlations between effects (sorting effect: sorted vs mixed, donor random effect)" =
+        rd("results/tables/sensitivity/check2_correlations.csv"),
+      "D. The 500 replication genes, by their direction in GSE67528 and GSE124308 neurons" =
+        rd("results/tables/sensitivity/check2_top500_by_direction.csv"))),
   S10_top_overlaps = list(
     "Same-direction overlap of the top 500 genes between neuron cohorts, observed vs expected (2,000 permutations).",
     rd("results/tables/figures/FigS3_upset_observed_expected.csv")),
   S11_top40_genes = list(
-    "The 40 genes with the strongest pooled neuron signal (same direction in all three neuron cohorts): log2FC and p per cohort.",
+    "The 40 genes with the strongest pooled neuron signal (same direction in all three neuron cohorts): log2FC and p per cohort. No gene reaches FDR < 0.05.",
     rd("results/tables/figures/FigS2_heatmap_top40.csv") |>
       select(any_of(c("symbol", "Gene_ID", "pooled_z", "cilia", "dataset", "log2FoldChange", "pvalue"))) |>
-      pivot_wider(names_from = dataset, values_from = c(log2FoldChange, pvalue)) |>
+      pivot_wider(names_from = dataset, values_from = c(log2FoldChange, pvalue),
+                  names_glue = "{.value} | {dataset}") |>
+      rename_with(\(x) sub("^log2FoldChange \\| ", "log2FC, ", sub("^pvalue \\| ", "p, ", x))) |>
       arrange(desc(pooled_z)))
 )
 
 hs <- createStyle(textDecoration = "bold", fgFill = "#E7E6E6", border = "bottom", wrapText = TRUE)
+bs <- createStyle(textDecoration = "bold")
 wb <- createWorkbook()
 addWorksheet(wb, "README")
 readme <- tibble(Sheet = names(supp), Description = map_chr(supp, 1))
 writeData(wb, "README", "Supplementary Tables — donor-aware re-analysis of iPSC-derived neural transcriptomes in idiopathic ASD (discovery cohorts GSE67528, GSE124308, GSE142670)", startRow = 1)
-addStyle(wb, "README", createStyle(textDecoration = "bold"), rows = 1, cols = 1)
+addStyle(wb, "README", bs, rows = 1, cols = 1)
 writeData(wb, "README", readme, startRow = 3, headerStyle = hs)
 setColWidths(wb, "README", cols = 1:2, widths = c(26, 120))
 for (nm in names(supp)) {
   addWorksheet(wb, nm)
   writeData(wb, nm, supp[[nm]][[1]], startRow = 1)
   addStyle(wb, nm, createStyle(textDecoration = "italic"), rows = 1, cols = 1)
-  df <- round_df(supp[[nm]][[2]])
-  writeData(wb, nm, df, startRow = 3, headerStyle = hs)
-  freezePane(wb, nm, firstActiveRow = 4)
-  setColWidths(wb, nm, cols = seq_len(ncol(df)), widths = "auto")
-  save_csv(df, nm)
+  content <- supp[[nm]][[2]]
+  if (is.data.frame(content)) {
+    df <- round_df(content)
+    save_csv(df, nm)
+    df <- nice(df)
+    writeData(wb, nm, df, startRow = 3, headerStyle = hs)
+    freezePane(wb, nm, firstActiveRow = 4)
+    setColWidths(wb, nm, cols = seq_len(ncol(df)), widths = "auto")
+  } else {                                   # several blocks stacked on one sheet
+    row <- 3; maxc <- 1
+    for (bt in names(content)) {
+      df <- round_df(content[[bt]])
+      save_csv(df, paste0(nm, "_", substr(bt, 1, 1)))
+      df <- nice(df)
+      writeData(wb, nm, bt, startRow = row); addStyle(wb, nm, bs, rows = row, cols = 1)
+      writeData(wb, nm, df, startRow = row + 1, headerStyle = hs)
+      row <- row + nrow(df) + 3; maxc <- max(maxc, ncol(df))
+    }
+    setColWidths(wb, nm, cols = seq_len(maxc), widths = "auto")
+  }
 }
 saveWorkbook(wb, file.path(out_dir, "Supplementary_Tables.xlsx"), overwrite = TRUE)
 message("  wrote Supplementary_Tables.xlsx")
@@ -385,7 +447,21 @@ writeData(wb2, "README", tibble(
                       length(de_files)),
                   "Per-gene random-effects meta-analysis of the three neuron cohorts.")),
   headerStyle = hs)
-setColWidths(wb2, "README", cols = 1:2, widths = c(30, 100))
+writeData(wb2, "README", tibble(
+  Column = c("Gene_ID", "log2FoldChange", "lfcSE", "stat", "pvalue", "padj", "AveExpr",
+             "Gene_Symbol / Gene_Biotype", "Meta: est, se, ci_lb, ci_ub, p, fdr",
+             "Meta: tau2, I2, Q", "Meta: st_z, st_p, stouffer_fdr", "Meta: max_p_leave_one_out, robust"),
+  Definition = c("Ensembl gene ID (release 115, primary assembly)",
+                 "ASD vs control log2 fold change (dream, donor random effect)",
+                 "Standard error implied by the moderated t (|log2FC / t|)",
+                 "Moderated t statistic", "p value", "Benjamini–Hochberg FDR",
+                 "Average log2 CPM", "Ensembl gene name and biotype",
+                 "Random-effects pooled log2FC, SE, 95% CI, p and FDR (REML, Hartung–Knapp ad hoc)",
+                 "Between-cohort variance, I² (%), Cochran's Q",
+                 "Weighted Stouffer z (weights √donors), p and FDR",
+                 "Largest p when any one cohort is dropped (genes with FDR < 0.10 only); robust flag")),
+  startRow = length(de_files) + 5, headerStyle = hs)
+setColWidths(wb2, "README", cols = 1:2, widths = c(34, 100))
 for (f in de_files) {
   nm <- substr(tools::file_path_sans_ext(basename(f)), 1, 31)
   addWorksheet(wb2, nm)

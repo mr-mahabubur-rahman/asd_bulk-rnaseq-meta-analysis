@@ -1,5 +1,5 @@
 intersection,observed,expected,ratio,perm_p_greater,universe
-GSE67528 neurons ∩ GSE124308 neurons,10,8.422,1.187,0.3358,14570
-GSE67528 neurons ∩ GSE142670 neurons,8,8.58,0.9323,0.6242,14570
-GSE124308 neurons ∩ GSE142670 neurons,17,9.06,1.876,0.008496,14570
-GSE67528 neurons ∩ GSE124308 neurons ∩ GSE142670 neurons,0,0.153,0,1,14570
+GSE67528 neurons ∩ GSE124308 neurons,10,8.422,1.187,0.3358,14574
+GSE67528 neurons ∩ GSE142670 neurons,8,8.58,0.9323,0.6242,14574
+GSE124308 neurons ∩ GSE142670 neurons,17,9.06,1.876,0.008496,14574
+GSE67528 neurons ∩ GSE124308 neurons ∩ GSE142670 neurons,0,0.153,0,1,14574

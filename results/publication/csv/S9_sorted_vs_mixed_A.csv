@@ -1,0 +1,17 @@
+stage,score,mean_ctrl,mean_asd,diff_asd_minus_ctrl,t_p
+Neuron,gabaergic,-0.566,-0.1696,0.3964,0.3708
+Neuron,glia,0.501,0.3099,-0.1911,0.5997
+Neuron,glutamatergic,-0.2745,-0.1556,0.1189,0.649
+Neuron,motile_cilia,0.1943,0.1567,-0.03759,0.8944
+Neuron,neuron,-0.4563,-0.4361,0.02019,0.9603
+Neuron,non_neural,0.307,0.3167,0.009717,0.9797
+Neuron,progenitor,0.5862,0.4264,-0.1598,0.6456
+Neuron,proliferation,0.2353,0.6162,0.381,0.3672
+Neuron_sorted,gabaergic,0.3604,1.01,0.6498,0.3204
+Neuron_sorted,glia,-0.7895,-0.3977,0.3918,0.4372
+Neuron_sorted,glutamatergic,0.4084,0.47,0.06167,0.4775
+Neuron_sorted,motile_cilia,-0.5613,-0.3381,0.2232,0.593
+Neuron_sorted,neuron,0.8841,0.9403,0.05619,0.8816
+Neuron_sorted,non_neural,-0.8697,-0.6153,0.2544,0.7418
+Neuron_sorted,progenitor,-0.7501,-0.878,-0.1279,0.839
+Neuron_sorted,proliferation,-1.104,-1.018,0.08644,0.7483

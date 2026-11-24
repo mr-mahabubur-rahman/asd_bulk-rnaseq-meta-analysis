@@ -1,0 +1,7 @@
+metric,value
+Genes in both models,17656
+Spearman ρ of moderated t,0.7869
+Share with the same direction,0.7913
+"Genes p < 0.05, full model",1629
+"Genes p < 0.05, without 101/102",1201
+"Genes FDR < 0.05, without 101/102",0

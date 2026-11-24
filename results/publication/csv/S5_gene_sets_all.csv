@@ -1,85 +1,85 @@
-set,NES,pval,camera_dir,camera_p,camera_fdr,ranking,label,theme,stage,column,camera_sig
-GOBP_AXONEME_ASSEMBLY,-3.233,9.919e-24,Down,2.541e-6,1.524e-5,GSE67528_Neuron,Axoneme assembly (GO:BP),Cilia,Neurons,GSE67528,TRUE
-GOBP_CILIUM_MOVEMENT,-2.978,3.3979999999999995e-30,Down,0.001112,0.002668,GSE67528_Neuron,Cilium movement (GO:BP),Cilia,Neurons,GSE67528,TRUE
-GOBP_CILIUM_ORGANIZATION,-2.457,2.702e-25,Down,0.03142,0.04713,GSE67528_Neuron,Cilium organization (GO:BP),Cilia,Neurons,GSE67528,TRUE
-GOBP_RIBOSOME_BIOGENESIS,3.252,1.272e-48,Up,1.861e-4,5.582e-4,GSE67528_Neuron,Ribosome biogenesis (GO:BP),Translation/MYC,Neurons,GSE67528,TRUE
-HALLMARK_E2F_TARGETS,2.236,1.281e-11,Up,0.04966,0.06621,GSE67528_Neuron,E2F targets (Hallmark),Cell cycle,Neurons,GSE67528,FALSE
-HALLMARK_G2M_CHECKPOINT,1.982,2.801e-8,Up,0.09912,0.1189,GSE67528_Neuron,G2/M checkpoint (Hallmark),Cell cycle,Neurons,GSE67528,FALSE
-HALLMARK_INTERFERON_ALPHA_RESPONSE,-0.9925,0.4707,Down,0.5877,0.6411,GSE67528_Neuron,Interferon-α response (Hallmark),IFN†,Neurons,GSE67528,FALSE
-HALLMARK_INTERFERON_GAMMA_RESPONSE,0.9538,0.5624,Up,0.823,0.823,GSE67528_Neuron,Interferon-γ response (Hallmark),IFN†,Neurons,GSE67528,FALSE
-HALLMARK_MTORC1_SIGNALING,2.386,6.125e-14,Up,0.02234,0.0383,GSE67528_Neuron,mTORC1 signalling (Hallmark),Translation/MYC,Neurons,GSE67528,TRUE
-HALLMARK_MYC_TARGETS_V1,3.312,4.417e-40,Up,2.016e-5,8.064e-5,GSE67528_Neuron,MYC targets V1 (Hallmark),Translation/MYC,Neurons,GSE67528,TRUE
-REACTOME_DNA_REPLICATION,2.513,3.141e-14,Up,0.006154,0.01231,GSE67528_Neuron,DNA replication (Reactome),Cell cycle,Neurons,GSE67528,TRUE
-REACTOME_EUKARYOTIC_TRANSLATION_INITIATION,3.485,4.9669999999999995e-37,Up,1.797e-7,2.157e-6,GSE67528_Neuron,Translation initiation (Reactome),Translation/MYC,Neurons,GSE67528,TRUE
-GOBP_AXONEME_ASSEMBLY,-2.22,3.981e-8,Down,0.002606,0.01563,GSE124308_both,Axoneme assembly (GO:BP),Cilia,Neurons,GSE124308,TRUE
-GOBP_CILIUM_MOVEMENT,-1.936,5.05e-8,Down,0.08098,0.162,GSE124308_both,Cilium movement (GO:BP),Cilia,Neurons,GSE124308,FALSE
-GOBP_CILIUM_ORGANIZATION,-2.173,2.848e-16,Down,0.0425,0.102,GSE124308_both,Cilium organization (GO:BP),Cilia,Neurons,GSE124308,FALSE
-GOBP_RIBOSOME_BIOGENESIS,1.479,4.726e-4,Up,0.316,0.4214,GSE124308_both,Ribosome biogenesis (GO:BP),Translation/MYC,Neurons,GSE124308,FALSE
-HALLMARK_E2F_TARGETS,-0.4393,1,Down,0.9743,0.9743,GSE124308_both,E2F targets (Hallmark),Cell cycle,Neurons,GSE124308,FALSE
-HALLMARK_G2M_CHECKPOINT,0.9693,0.5273,Up,0.5589,0.6707,GSE124308_both,G2/M checkpoint (Hallmark),Cell cycle,Neurons,GSE124308,FALSE
-HALLMARK_INTERFERON_ALPHA_RESPONSE,-2.589,6.795e-13,Down,5.088e-4,0.006105,GSE124308_both,Interferon-α response (Hallmark),IFN†,Neurons,GSE124308,TRUE
-HALLMARK_INTERFERON_GAMMA_RESPONSE,-2.267,2.743e-11,Down,0.01716,0.05147,GSE124308_both,Interferon-γ response (Hallmark),IFN†,Neurons,GSE124308,FALSE
-HALLMARK_MTORC1_SIGNALING,0.8418,0.871,Up,0.8106,0.8843,GSE124308_both,mTORC1 signalling (Hallmark),Translation/MYC,Neurons,GSE124308,FALSE
-HALLMARK_MYC_TARGETS_V1,1.653,3.653e-4,Up,0.2034,0.3051,GSE124308_both,MYC targets V1 (Hallmark),Translation/MYC,Neurons,GSE124308,FALSE
-REACTOME_DNA_REPLICATION,-1.902,1.253e-6,Down,0.114,0.1954,GSE124308_both,DNA replication (Reactome),Cell cycle,Neurons,GSE124308,FALSE
-REACTOME_EUKARYOTIC_TRANSLATION_INITIATION,2.483,4.689e-12,Up,0.008026,0.0321,GSE124308_both,Translation initiation (Reactome),Translation/MYC,Neurons,GSE124308,TRUE
-GOBP_AXONEME_ASSEMBLY,-0.5093,1,Down,0.8779,0.9427,GSE142670_Neuron,Axoneme assembly (GO:BP),Cilia,Neurons,GSE142670,FALSE
-GOBP_CILIUM_MOVEMENT,-1.074,0.2709,Down,0.7205,0.9427,GSE142670_Neuron,Cilium movement (GO:BP),Cilia,Neurons,GSE142670,FALSE
-GOBP_CILIUM_ORGANIZATION,-1.031,0.349,Down,0.7629,0.9427,GSE142670_Neuron,Cilium organization (GO:BP),Cilia,Neurons,GSE142670,FALSE
-GOBP_RIBOSOME_BIOGENESIS,-2.45,6.581000000000001e-20,Down,0.007989,0.05225,GSE142670_Neuron,Ribosome biogenesis (GO:BP),Translation/MYC,Neurons,GSE142670,FALSE
-HALLMARK_E2F_TARGETS,1.111,0.2082,Up,0.6361,0.9427,GSE142670_Neuron,E2F targets (Hallmark),Cell cycle,Neurons,GSE142670,FALSE
-HALLMARK_G2M_CHECKPOINT,1.271,0.03168,Up,0.4095,0.819,GSE142670_Neuron,G2/M checkpoint (Hallmark),Cell cycle,Neurons,GSE142670,FALSE
-HALLMARK_INTERFERON_ALPHA_RESPONSE,-0.9154,0.65,Down,0.9427,0.9427,GSE142670_Neuron,Interferon-α response (Hallmark),IFN†,Neurons,GSE142670,FALSE
-HALLMARK_INTERFERON_GAMMA_RESPONSE,-0.854,0.8367,Down,0.8575,0.9427,GSE142670_Neuron,Interferon-γ response (Hallmark),IFN†,Neurons,GSE142670,FALSE
-HALLMARK_MTORC1_SIGNALING,-1.768,1.166e-5,Down,0.1839,0.4907,GSE142670_Neuron,mTORC1 signalling (Hallmark),Translation/MYC,Neurons,GSE142670,FALSE
-HALLMARK_MYC_TARGETS_V1,-2.534,2.985e-17,Down,0.008709,0.05225,GSE142670_Neuron,MYC targets V1 (Hallmark),Translation/MYC,Neurons,GSE142670,FALSE
-REACTOME_DNA_REPLICATION,-1.706,1.588e-4,Down,0.2045,0.4907,GSE142670_Neuron,DNA replication (Reactome),Cell cycle,Neurons,GSE142670,FALSE
-REACTOME_EUKARYOTIC_TRANSLATION_INITIATION,-2.032,5.641e-7,Down,0.048,0.192,GSE142670_Neuron,Translation initiation (Reactome),Translation/MYC,Neurons,GSE142670,FALSE
-GOBP_AXONEME_ASSEMBLY,0.9382,0.5869,Up,0.9418,0.9418,GSE67528_NPC,Axoneme assembly (GO:BP),Cilia,NPC,GSE67528,FALSE
-GOBP_CILIUM_MOVEMENT,1.081,0.221,Up,0.7294,0.8169,GSE67528_NPC,Cilium movement (GO:BP),Cilia,NPC,GSE67528,FALSE
-GOBP_CILIUM_ORGANIZATION,1.08,0.2157,Up,0.6505,0.8169,GSE67528_NPC,Cilium organization (GO:BP),Cilia,NPC,GSE67528,FALSE
-GOBP_RIBOSOME_BIOGENESIS,2.046,1.189e-11,Up,0.1218,0.2087,GSE67528_NPC,Ribosome biogenesis (GO:BP),Translation/MYC,NPC,GSE67528,FALSE
-HALLMARK_E2F_TARGETS,2.885,1.1239999999999999e-23,Up,7.868e-4,0.004721,GSE67528_NPC,E2F targets (Hallmark),Cell cycle,NPC,GSE67528,TRUE
-HALLMARK_G2M_CHECKPOINT,2.711,4.6490000000000004e-20,Up,0.002785,0.01114,GSE67528_NPC,G2/M checkpoint (Hallmark),Cell cycle,NPC,GSE67528,TRUE
-HALLMARK_INTERFERON_ALPHA_RESPONSE,-1.457,0.01546,Down,0.329,0.4935,GSE67528_NPC,Interferon-α response (Hallmark),IFN†,NPC,GSE67528,FALSE
-HALLMARK_INTERFERON_GAMMA_RESPONSE,-1.121,0.2165,Down,0.7488,0.8169,GSE67528_NPC,Interferon-γ response (Hallmark),IFN†,NPC,GSE67528,FALSE
-HALLMARK_MTORC1_SIGNALING,2.102,5.424e-9,Up,0.03946,0.07892,GSE67528_NPC,mTORC1 signalling (Hallmark),Translation/MYC,NPC,GSE67528,FALSE
-HALLMARK_MYC_TARGETS_V1,2.906,3.579e-24,Up,7.542e-4,0.004721,GSE67528_NPC,MYC targets V1 (Hallmark),Translation/MYC,NPC,GSE67528,TRUE
-REACTOME_DNA_REPLICATION,2.387,1.78e-12,Up,0.01206,0.02894,GSE67528_NPC,DNA replication (Reactome),Cell cycle,NPC,GSE67528,TRUE
-REACTOME_EUKARYOTIC_TRANSLATION_INITIATION,-2.459,1.385e-11,Down,0.003951,0.01185,GSE67528_NPC,Translation initiation (Reactome),Translation/MYC,NPC,GSE67528,TRUE
-GOBP_AXONEME_ASSEMBLY,-2.898,4.34e-16,Down,5.832e-5,1.4e-4,GSE142670_NPC,Axoneme assembly (GO:BP),Cilia,NPC,GSE142670,TRUE
-GOBP_CILIUM_MOVEMENT,-2.341,4.021e-12,Down,0.01558,0.02671,GSE142670_NPC,Cilium movement (GO:BP),Cilia,NPC,GSE142670,TRUE
-GOBP_CILIUM_ORGANIZATION,-2.105,3.479e-13,Down,0.08985,0.1198,GSE142670_NPC,Cilium organization (GO:BP),Cilia,NPC,GSE142670,FALSE
-GOBP_RIBOSOME_BIOGENESIS,3.444,3.886999999999999e-54,Up,1.056e-5,4.224e-5,GSE142670_NPC,Ribosome biogenesis (GO:BP),Translation/MYC,NPC,GSE142670,TRUE
-HALLMARK_E2F_TARGETS,2.329,2.586e-12,Up,0.01933,0.02899,GSE142670_NPC,E2F targets (Hallmark),Cell cycle,NPC,GSE142670,TRUE
-HALLMARK_G2M_CHECKPOINT,1.98,3.655e-7,Up,0.1145,0.1374,GSE142670_NPC,G2/M checkpoint (Hallmark),Cell cycle,NPC,GSE142670,FALSE
-HALLMARK_INTERFERON_ALPHA_RESPONSE,0.9946,0.4476,Up,0.7414,0.7414,GSE142670_NPC,Interferon-α response (Hallmark),IFN†,NPC,GSE142670,FALSE
-HALLMARK_INTERFERON_GAMMA_RESPONSE,1.526,0.005488,Up,0.1725,0.1882,GSE142670_NPC,Interferon-γ response (Hallmark),IFN†,NPC,GSE142670,FALSE
-HALLMARK_MTORC1_SIGNALING,3.173,3.5749999999999998e-31,Up,2.508e-5,7.525e-5,GSE142670_NPC,mTORC1 signalling (Hallmark),Translation/MYC,NPC,GSE142670,TRUE
-HALLMARK_MYC_TARGETS_V1,3.667,1.615e-50,Up,5.285e-8,3.857e-7,GSE142670_NPC,MYC targets V1 (Hallmark),Translation/MYC,NPC,GSE142670,TRUE
-REACTOME_DNA_REPLICATION,2.854,1.318e-18,Up,8.486e-4,0.001697,GSE142670_NPC,DNA replication (Reactome),Cell cycle,NPC,GSE142670,TRUE
-REACTOME_EUKARYOTIC_TRANSLATION_INITIATION,3.403,6.935e-31,Up,6.428e-8,3.857e-7,GSE142670_NPC,Translation initiation (Reactome),Translation/MYC,NPC,GSE142670,TRUE
-GOBP_AXONEME_ASSEMBLY,-2.994,2.9390000000000002e-21,Down,1.124e-6,1.349e-5,pooled_neuron,Axoneme assembly (GO:BP),Cilia,Neurons,Pooled,TRUE
-GOBP_CILIUM_MOVEMENT,-2.812,1.2790000000000001e-26,Down,7.307e-4,0.002923,pooled_neuron,Cilium movement (GO:BP),Cilia,Neurons,Pooled,TRUE
-GOBP_CILIUM_ORGANIZATION,-2.497,1.195e-27,Down,0.01129,0.02404,pooled_neuron,Cilium organization (GO:BP),Cilia,Neurons,Pooled,TRUE
-GOBP_RIBOSOME_BIOGENESIS,2.379,8.411e-18,Up,0.02807,0.04812,pooled_neuron,Ribosome biogenesis (GO:BP),Translation/MYC,Neurons,Pooled,TRUE
-HALLMARK_E2F_TARGETS,1.88,2.122e-7,Up,0.1123,0.1348,pooled_neuron,E2F targets (Hallmark),Cell cycle,Neurons,Pooled,FALSE
-HALLMARK_G2M_CHECKPOINT,2.018,9.726e-9,Up,0.05721,0.08581,pooled_neuron,G2/M checkpoint (Hallmark),Cell cycle,Neurons,Pooled,FALSE
-HALLMARK_INTERFERON_ALPHA_RESPONSE,-2.106,4.234e-7,Down,0.01202,0.02404,pooled_neuron,Interferon-α response (Hallmark),IFN†,Neurons,Pooled,TRUE
-HALLMARK_INTERFERON_GAMMA_RESPONSE,-1.716,1.263e-4,Down,0.1029,0.1348,pooled_neuron,Interferon-γ response (Hallmark),IFN†,Neurons,Pooled,FALSE
-HALLMARK_MTORC1_SIGNALING,1.567,7.075e-4,Up,0.2036,0.2221,pooled_neuron,mTORC1 signalling (Hallmark),Translation/MYC,Neurons,Pooled,FALSE
-HALLMARK_MYC_TARGETS_V1,2.653,2.289e-18,Up,0.008085,0.02404,pooled_neuron,MYC targets V1 (Hallmark),Translation/MYC,Neurons,Pooled,TRUE
-REACTOME_DNA_REPLICATION,1.198,0.09695,Up,0.3987,0.3987,pooled_neuron,DNA replication (Reactome),Cell cycle,Neurons,Pooled,FALSE
-REACTOME_EUKARYOTIC_TRANSLATION_INITIATION,3.478,3.995e-31,Up,1.592e-5,9.554e-5,pooled_neuron,Translation initiation (Reactome),Translation/MYC,Neurons,Pooled,TRUE
-GOBP_AXONEME_ASSEMBLY,-2.493,6.821e-10,Down,0.002721,0.005442,pooled_npc,Axoneme assembly (GO:BP),Cilia,NPC,Pooled,TRUE
-GOBP_CILIUM_MOVEMENT,-2.037,5.028e-8,Down,0.09994,0.1333,pooled_npc,Cilium movement (GO:BP),Cilia,NPC,Pooled,FALSE
-GOBP_CILIUM_ORGANIZATION,-1.706,1.223e-6,Down,0.2745,0.3294,pooled_npc,Cilium organization (GO:BP),Cilia,NPC,Pooled,FALSE
-GOBP_RIBOSOME_BIOGENESIS,3.012,1.235e-38,Up,1.285e-4,3.854e-4,pooled_npc,Ribosome biogenesis (GO:BP),Translation/MYC,NPC,Pooled,TRUE
-HALLMARK_E2F_TARGETS,2.873,6.592000000000001e-25,Up,4.353e-4,0.001045,pooled_npc,E2F targets (Hallmark),Cell cycle,NPC,Pooled,TRUE
-HALLMARK_G2M_CHECKPOINT,2.545,3.898e-17,Up,0.004839,0.008296,pooled_npc,G2/M checkpoint (Hallmark),Cell cycle,NPC,Pooled,TRUE
-HALLMARK_INTERFERON_ALPHA_RESPONSE,-1.018,0.4307,Down,0.613,0.613,pooled_npc,Interferon-α response (Hallmark),IFN†,NPC,Pooled,FALSE
-HALLMARK_INTERFERON_GAMMA_RESPONSE,1.089,0.2791,Up,0.5358,0.5845,pooled_npc,Interferon-γ response (Hallmark),IFN†,NPC,Pooled,FALSE
-HALLMARK_MTORC1_SIGNALING,2.892,3.421e-25,Up,1.218e-4,3.854e-4,pooled_npc,mTORC1 signalling (Hallmark),Translation/MYC,NPC,Pooled,TRUE
-HALLMARK_MYC_TARGETS_V1,3.547,1.5670000000000001e-50,Up,2.344e-8,2.813e-7,pooled_npc,MYC targets V1 (Hallmark),Translation/MYC,NPC,Pooled,TRUE
-REACTOME_DNA_REPLICATION,2.833,3.0600000000000005e-20,Up,6.856e-5,3.854e-4,pooled_npc,DNA replication (Reactome),Cell cycle,NPC,Pooled,TRUE
-REACTOME_EUKARYOTIC_TRANSLATION_INITIATION,1.847,5.061e-5,Up,0.09643,0.1333,pooled_npc,Translation initiation (Reactome),Translation/MYC,NPC,Pooled,FALSE
+theme,label,ranking,NES,pval,camera_dir,camera_p,camera_fdr
+Cilia,Axoneme assembly (GO:BP),GSE67528_Neuron,-3.233,9.919e-24,Down,2.541e-6,1.524e-5
+Cilia,Cilium movement (GO:BP),GSE67528_Neuron,-2.978,3.3979999999999995e-30,Down,0.001112,0.002668
+Cilia,Cilium organization (GO:BP),GSE67528_Neuron,-2.457,2.702e-25,Down,0.03142,0.04713
+Translation/MYC,Ribosome biogenesis (GO:BP),GSE67528_Neuron,3.252,1.272e-48,Up,1.861e-4,5.582e-4
+Cell cycle,E2F targets (Hallmark),GSE67528_Neuron,2.236,1.281e-11,Up,0.04966,0.06621
+Cell cycle,G2/M checkpoint (Hallmark),GSE67528_Neuron,1.982,2.801e-8,Up,0.09912,0.1189
+IFN†,Interferon-α response (Hallmark),GSE67528_Neuron,-0.9925,0.4707,Down,0.5877,0.6411
+IFN†,Interferon-γ response (Hallmark),GSE67528_Neuron,0.9538,0.5624,Up,0.823,0.823
+Translation/MYC,mTORC1 signalling (Hallmark),GSE67528_Neuron,2.386,6.125e-14,Up,0.02234,0.0383
+Translation/MYC,MYC targets V1 (Hallmark),GSE67528_Neuron,3.312,4.417e-40,Up,2.016e-5,8.064e-5
+Cell cycle,DNA replication (Reactome),GSE67528_Neuron,2.513,3.141e-14,Up,0.006154,0.01231
+Translation/MYC,Translation initiation (Reactome),GSE67528_Neuron,3.485,4.9669999999999995e-37,Up,1.797e-7,2.157e-6
+Cilia,Axoneme assembly (GO:BP),GSE124308_both,-2.22,3.981e-8,Down,0.002606,0.01563
+Cilia,Cilium movement (GO:BP),GSE124308_both,-1.936,5.05e-8,Down,0.08098,0.162
+Cilia,Cilium organization (GO:BP),GSE124308_both,-2.173,2.848e-16,Down,0.0425,0.102
+Translation/MYC,Ribosome biogenesis (GO:BP),GSE124308_both,1.479,4.726e-4,Up,0.316,0.4214
+Cell cycle,E2F targets (Hallmark),GSE124308_both,-0.4393,1,Down,0.9743,0.9743
+Cell cycle,G2/M checkpoint (Hallmark),GSE124308_both,0.9693,0.5273,Up,0.5589,0.6707
+IFN†,Interferon-α response (Hallmark),GSE124308_both,-2.589,6.795e-13,Down,5.088e-4,0.006105
+IFN†,Interferon-γ response (Hallmark),GSE124308_both,-2.267,2.743e-11,Down,0.01716,0.05147
+Translation/MYC,mTORC1 signalling (Hallmark),GSE124308_both,0.8418,0.871,Up,0.8106,0.8843
+Translation/MYC,MYC targets V1 (Hallmark),GSE124308_both,1.653,3.653e-4,Up,0.2034,0.3051
+Cell cycle,DNA replication (Reactome),GSE124308_both,-1.902,1.253e-6,Down,0.114,0.1954
+Translation/MYC,Translation initiation (Reactome),GSE124308_both,2.483,4.689e-12,Up,0.008026,0.0321
+Cilia,Axoneme assembly (GO:BP),GSE142670_Neuron,-0.5093,1,Down,0.8779,0.9427
+Cilia,Cilium movement (GO:BP),GSE142670_Neuron,-1.074,0.2709,Down,0.7205,0.9427
+Cilia,Cilium organization (GO:BP),GSE142670_Neuron,-1.031,0.349,Down,0.7629,0.9427
+Translation/MYC,Ribosome biogenesis (GO:BP),GSE142670_Neuron,-2.45,6.581000000000001e-20,Down,0.007989,0.05225
+Cell cycle,E2F targets (Hallmark),GSE142670_Neuron,1.111,0.2082,Up,0.6361,0.9427
+Cell cycle,G2/M checkpoint (Hallmark),GSE142670_Neuron,1.271,0.03168,Up,0.4095,0.819
+IFN†,Interferon-α response (Hallmark),GSE142670_Neuron,-0.9154,0.65,Down,0.9427,0.9427
+IFN†,Interferon-γ response (Hallmark),GSE142670_Neuron,-0.854,0.8367,Down,0.8575,0.9427
+Translation/MYC,mTORC1 signalling (Hallmark),GSE142670_Neuron,-1.768,1.166e-5,Down,0.1839,0.4907
+Translation/MYC,MYC targets V1 (Hallmark),GSE142670_Neuron,-2.534,2.985e-17,Down,0.008709,0.05225
+Cell cycle,DNA replication (Reactome),GSE142670_Neuron,-1.706,1.588e-4,Down,0.2045,0.4907
+Translation/MYC,Translation initiation (Reactome),GSE142670_Neuron,-2.032,5.641e-7,Down,0.048,0.192
+Cilia,Axoneme assembly (GO:BP),GSE67528_NPC,0.9382,0.5869,Up,0.9418,0.9418
+Cilia,Cilium movement (GO:BP),GSE67528_NPC,1.081,0.221,Up,0.7294,0.8169
+Cilia,Cilium organization (GO:BP),GSE67528_NPC,1.08,0.2157,Up,0.6505,0.8169
+Translation/MYC,Ribosome biogenesis (GO:BP),GSE67528_NPC,2.046,1.189e-11,Up,0.1218,0.2087
+Cell cycle,E2F targets (Hallmark),GSE67528_NPC,2.885,1.1239999999999999e-23,Up,7.868e-4,0.004721
+Cell cycle,G2/M checkpoint (Hallmark),GSE67528_NPC,2.711,4.6490000000000004e-20,Up,0.002785,0.01114
+IFN†,Interferon-α response (Hallmark),GSE67528_NPC,-1.457,0.01546,Down,0.329,0.4935
+IFN†,Interferon-γ response (Hallmark),GSE67528_NPC,-1.121,0.2165,Down,0.7488,0.8169
+Translation/MYC,mTORC1 signalling (Hallmark),GSE67528_NPC,2.102,5.424e-9,Up,0.03946,0.07892
+Translation/MYC,MYC targets V1 (Hallmark),GSE67528_NPC,2.906,3.579e-24,Up,7.542e-4,0.004721
+Cell cycle,DNA replication (Reactome),GSE67528_NPC,2.387,1.78e-12,Up,0.01206,0.02894
+Translation/MYC,Translation initiation (Reactome),GSE67528_NPC,-2.459,1.385e-11,Down,0.003951,0.01185
+Cilia,Axoneme assembly (GO:BP),GSE142670_NPC,-2.898,4.34e-16,Down,5.832e-5,1.4e-4
+Cilia,Cilium movement (GO:BP),GSE142670_NPC,-2.341,4.021e-12,Down,0.01558,0.02671
+Cilia,Cilium organization (GO:BP),GSE142670_NPC,-2.105,3.479e-13,Down,0.08985,0.1198
+Translation/MYC,Ribosome biogenesis (GO:BP),GSE142670_NPC,3.444,3.886999999999999e-54,Up,1.056e-5,4.224e-5
+Cell cycle,E2F targets (Hallmark),GSE142670_NPC,2.329,2.586e-12,Up,0.01933,0.02899
+Cell cycle,G2/M checkpoint (Hallmark),GSE142670_NPC,1.98,3.655e-7,Up,0.1145,0.1374
+IFN†,Interferon-α response (Hallmark),GSE142670_NPC,0.9946,0.4476,Up,0.7414,0.7414
+IFN†,Interferon-γ response (Hallmark),GSE142670_NPC,1.526,0.005488,Up,0.1725,0.1882
+Translation/MYC,mTORC1 signalling (Hallmark),GSE142670_NPC,3.173,3.5749999999999998e-31,Up,2.508e-5,7.525e-5
+Translation/MYC,MYC targets V1 (Hallmark),GSE142670_NPC,3.667,1.615e-50,Up,5.285e-8,3.857e-7
+Cell cycle,DNA replication (Reactome),GSE142670_NPC,2.854,1.318e-18,Up,8.486e-4,0.001697
+Translation/MYC,Translation initiation (Reactome),GSE142670_NPC,3.403,6.935e-31,Up,6.428e-8,3.857e-7
+Cilia,Axoneme assembly (GO:BP),pooled_neuron,-2.994,2.9390000000000002e-21,Down,1.124e-6,1.349e-5
+Cilia,Cilium movement (GO:BP),pooled_neuron,-2.812,1.2790000000000001e-26,Down,7.307e-4,0.002923
+Cilia,Cilium organization (GO:BP),pooled_neuron,-2.497,1.195e-27,Down,0.01129,0.02404
+Translation/MYC,Ribosome biogenesis (GO:BP),pooled_neuron,2.379,8.411e-18,Up,0.02807,0.04812
+Cell cycle,E2F targets (Hallmark),pooled_neuron,1.88,2.122e-7,Up,0.1123,0.1348
+Cell cycle,G2/M checkpoint (Hallmark),pooled_neuron,2.018,9.726e-9,Up,0.05721,0.08581
+IFN†,Interferon-α response (Hallmark),pooled_neuron,-2.106,4.234e-7,Down,0.01202,0.02404
+IFN†,Interferon-γ response (Hallmark),pooled_neuron,-1.716,1.263e-4,Down,0.1029,0.1348
+Translation/MYC,mTORC1 signalling (Hallmark),pooled_neuron,1.567,7.075e-4,Up,0.2036,0.2221
+Translation/MYC,MYC targets V1 (Hallmark),pooled_neuron,2.653,2.289e-18,Up,0.008085,0.02404
+Cell cycle,DNA replication (Reactome),pooled_neuron,1.198,0.09695,Up,0.3987,0.3987
+Translation/MYC,Translation initiation (Reactome),pooled_neuron,3.478,3.995e-31,Up,1.592e-5,9.554e-5
+Cilia,Axoneme assembly (GO:BP),pooled_npc,-2.493,6.821e-10,Down,0.002721,0.005442
+Cilia,Cilium movement (GO:BP),pooled_npc,-2.037,5.028e-8,Down,0.09994,0.1333
+Cilia,Cilium organization (GO:BP),pooled_npc,-1.706,1.223e-6,Down,0.2745,0.3294
+Translation/MYC,Ribosome biogenesis (GO:BP),pooled_npc,3.012,1.235e-38,Up,1.285e-4,3.854e-4
+Cell cycle,E2F targets (Hallmark),pooled_npc,2.873,6.592000000000001e-25,Up,4.353e-4,0.001045
+Cell cycle,G2/M checkpoint (Hallmark),pooled_npc,2.545,3.898e-17,Up,0.004839,0.008296
+IFN†,Interferon-α response (Hallmark),pooled_npc,-1.018,0.4307,Down,0.613,0.613
+IFN†,Interferon-γ response (Hallmark),pooled_npc,1.089,0.2791,Up,0.5358,0.5845
+Translation/MYC,mTORC1 signalling (Hallmark),pooled_npc,2.892,3.421e-25,Up,1.218e-4,3.854e-4
+Translation/MYC,MYC targets V1 (Hallmark),pooled_npc,3.547,1.5670000000000001e-50,Up,2.344e-8,2.813e-7
+Cell cycle,DNA replication (Reactome),pooled_npc,2.833,3.0600000000000005e-20,Up,6.856e-5,3.854e-4
+Translation/MYC,Translation initiation (Reactome),pooled_npc,1.847,5.061e-5,Up,0.09643,0.1333

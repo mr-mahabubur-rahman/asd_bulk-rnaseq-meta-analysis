@@ -1,0 +1,9 @@
+score,mean_shift,p_paired
+gabaergic,0.7129,0.02062
+glia,-1.032,0.02592
+glutamatergic,0.6342,0.006363
+motile_cilia,-0.7556,0.001634
+neuron,1.096,0.003844
+non_neural,-0.7195,0.06557
+progenitor,-1.267,0.003642
+proliferation,-1.205,0.00316
