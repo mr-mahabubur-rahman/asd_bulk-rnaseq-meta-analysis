@@ -324,7 +324,23 @@ hdr <- c(analysis = "Analysis", dataset = "Analysis", samples = "Samples", donor
          mean_sorting_t = "Mean sorting t", share_depleted_by_sorting = "Share depleted by sorting",
          share_same_dir_mixed = "Same direction, mixed cultures",
          share_same_dir_sorted = "Same direction, sorted neurons", metric = "Metric", value = "Value")
-nice <- function(df) { names(df) <- coalesce(unname(hdr[names(df)]), names(df)); df }
+hdr <- c(hdr, version = "Version", held_out = "Held-out cohort", share = "Share same direction",
+         p_one_sided = "One-sided p", p_two_sided = "Two-sided p")
+val_map <- c(pretty, GSE67528_iPSC = "GSE67528 iPSCs", GSE124308_d35 = "GSE124308 neurons, day 35",
+             GSE124308_d135 = "GSE124308 neurons, day 135",
+             GSE124308_both_adjSource = "GSE124308 neurons, adjusted for iPSC source",
+             neuron_primary = "Neurons, primary (mixed GSE142670 neurons)",
+             neuron_sens_sorted = "Neurons, sensitivity (sorted GSE142670 neurons)",
+             neuron = "Neuronal", progenitor = "Progenitor", proliferation = "Proliferation",
+             glia = "Glial", non_neural = "Non-neural (mesenchymal)", pluripotency = "Pluripotency",
+             glutamatergic = "Glutamatergic", gabaergic = "GABAergic", motile_cilia = "Motile cilia",
+             Neuron = "Mixed neuronal culture", Neuron_sorted = "FACS-sorted neurons")
+val_cols <- c("analysis", "dataset", "ranking", "held_out", "score", "stage")
+nice <- function(df) {
+  df <- df |> mutate(across(any_of(val_cols), \(x) coalesce(unname(val_map[as.character(x)]),
+                                                            as.character(x))))
+  names(df) <- coalesce(unname(hdr[names(df)]), names(df)); df
+}
 
 c1_cam <- rd("results/tables/sensitivity/check1_cameraPR.csv")
 supp <- list(
