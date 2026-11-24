@@ -1,182 +1,189 @@
-# Cross-Cohort Replication of Transcriptomic Dysregulation in Autism Spectrum Disorder: A Meta-Analysis of Two Independent Patient-Derived iPSC RNA-Seq Datasets
+# Transcriptomic alterations in iPSC-derived neural models of idiopathic autism
 
-[![DOI](https://img.shields.io/badge/DOI-pending-blue)]()
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![R](https://img.shields.io/badge/R-≥4.6-blue.svg)](https://www.r-project.org/)
+**A systematic review and donor-aware meta-analysis of re-processed RNA-seq data: protocol, analysis pipeline and discovery-stage results**
 
-## Overview
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-This repository contains the complete, reproducible analytical pipeline for a cross-cohort meta-analysis of autism spectrum disorder (ASD) transcriptomic data from two independent patient-derived iPSC RNA-Seq datasets. The study identifies 39 differentially expressed genes with consistent direction of change across both cohorts, and characterizes the associated biological pathways through functional enrichment and protein–protein interaction network analysis.
+> **Status (24 Nov 2026)**
+> - **Protocol v1.0 is frozen** ([`docs/protocol_v1.0.pdf`](docs/protocol_v1.0.pdf)). It was not prospectively registered. Its git commits serve as timestamps: v0.3 is commit `3c2e0a9` (24 Nov 2026, 13:24 UTC+6) and v1.0 is commit `33d4e50` (17:03 UTC+6).
+> - **The discovery analysis is complete** for three cohorts (GSE67528, GSE124308, GSE142670). Its results generated the hypotheses H1–H4. They are **not** confirmatory.
+> - **Confirmation is pending.** It requires a systematic search, uniform Salmon re-quantification of all eligible datasets, and tests of H1–H4 in datasets not used for discovery.
+>
+> This repository **replaces** an earlier pilot analysis that reported 39 meta-analysis DEGs and an interferon/MHC-I signature. Those results are **withdrawn**: see [What changed from the pilot](#what-changed-from-the-pilot).
 
-**Author:** Mahabubur Rahman  
-**Affiliation:** Molecular Diagnostics and NGS Laboratory, BIRDEM General Hospital, Dhaka, Bangladesh  
-**ORCID:** [0000-0002-5535-5816](https://orcid.org/0000-0002-5535-5816)
+---
+
+## Authors
+
+| | Name | Affiliation | ORCID |
+|---|---|---|---|
+| 1 | **Mahabubur Rahman** | Molecular Diagnostics and NGS Laboratory, BIRDEM General Hospital, Dhaka, Bangladesh | [0000-0002-5535-5816](https://orcid.org/0000-0002-5535-5816) |
+| 2 | **Mofizul Islam** | Department of Neurology, BIRDEM General Hospital, Dhaka, Bangladesh | — |
+
+Correspondence: Mahabubur Rahman [email to be added].
+
+---
+
+## Question
+
+Do neural progenitor cells (NPCs) and neurons derived from induced pluripotent stem cells (iPSCs) of people with **idiopathic** autism show reproducible transcriptomic differences from controls once **donor** (not sample) is treated as the unit of replication?
+
+## Pre-specified hypotheses (protocol v1.0)
+
+| | Hypothesis | Primary test (confirmation set) |
+|---|---|---|
+| **H1** | ASD-associated expression changes replicate across cohorts in direction | Binomial test of direction agreement for the discovery top-500 genes |
+| **H2** | A FOXJ1-associated ciliogenesis programme is lower in ASD, reflecting fewer or less mature FOXJ1-positive ciliated cells rather than loss of primary cilia from neurons | cameraPR, curated motile-cilia set, one-sided (lower) |
+| **H3** | Hallmark MYC targets V1 are higher in ASD NPCs | cameraPR, one-sided (higher) |
+| **H4** | Hallmark interferon-α response is lower in ASD | cameraPR, one-sided (lower) |
+
+The four primary tests are Holm-corrected. Results from multiple confirmation datasets are combined by weighted Stouffer z (weights = √donors).
+
+---
 
 ## Datasets
 
-| Dataset | Source | Samples | ASD / Control | Model |
-|---------|--------|---------|---------------|-------|
-| [GSE67528](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE67528) | Marchetto et al., *Mol Psychiatry* 2017 | 83 | 55 / 28 | iPSC + iPSC-derived NPCs + neurons |
-| [GSE124308](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE124308) | DeRosa et al., *Sci Rep* 2018 | 22 | 12 / 10 | iPSC-derived cortical neurons |
+| Dataset | Reference | Model and stages | ASD / control donors | Role |
+|---|---|---|---|---|
+| GSE67528 | Marchetto et al., *Mol Psychiatry* 2017 | 2D: iPSC, NPC, neurons | 8 / 6 | Discovery |
+| GSE124308 | DeRosa et al., *Sci Rep* 2018 | 2D cortical neurons, day 35 and day 135 | 6 / 5 | Discovery (iPSC source partly confounded with diagnosis) |
+| GSE142670 | Griesi-Oliveira et al., *Mol Psychiatry* 2021 | 2D: NPC, mixed neurons, FACS-sorted neurons | 6 / 6 | Discovery |
+| GSE61476 | Mariani et al., *Cell* 2015 | Organoids, day 0, 11, 31 | 4 / 8 (family design) | Confirmation (organoid analysis) |
+| syn8118403 | Adhya et al., *Biol Psychiatry* 2021 | 2D cortical neurons, day 35 | 3 / 3 | Confirmation, if accessible |
+| E-MTAB-6018 | Schafer et al., *Nat Neurosci* 2019 | 2D neural time course | 8 / 5 | Donor-overlap check against GSE67528 first |
 
-## Key Findings
+Further candidates and exclusions are listed in the protocol (Study records). The final dataset list will come from the systematic search.
 
-- **39 meta-analysis DEGs** (18 upregulated, 21 downregulated; randomP < 0.05, |log2FC| ≥ 1)
-- **100% direction consistency** — all DEGs show concordant regulation across both independent cohorts
-- **KLF4** — sole gene reaching per-dataset significance in both cohorts independently
-- **Top upregulated:** DDR1, F8A3, TUBB, RING1, RXRB, HLA-A, PRRC2A
-- **Top downregulated:** GABBR1, DDAH2, COL11A2, SP140L, CSNK2B, NNAT
-- **Enriched pathways:** ribosome biogenesis ↑, mTORC1/MYC signaling ↑, cilium assembly ↓, interferon response ↓, retinoic acid signaling, MHC class I antigen presentation
-- **4 hub genes** in PPI network: HLA-A, RING1, PRRC2A, TRIM26
+---
 
-## Pipeline Overview
+## Discovery-stage findings (hypothesis-generating)
 
+| Finding | Result |
+|---|---|
+| Single-gene differential expression | **No gene at FDR < 0.05** in any cohort, or in the 3-cohort random-effects meta-analysis (14,574 genes; smallest p = 0.045) |
+| **Direction replication (neurons)** | Leave-one-cohort-out agreement for the top 500 genes: 61–63% (one-sided binomial p ≤ 9 × 10⁻⁷); 58–69% after neuron-score adjustment |
+| Direction replication (NPCs) | 56–63% (p = 0.02 to 1 × 10⁻⁷) |
+| FACS-sorted GSE142670 neurons | 33% agreement, i.e. **reversed** (two-sided p = 5 × 10⁻¹⁵); cause unresolved |
+| Cell composition | No difference by diagnosis in neuronal or progenitor marker scores |
+| **Cilia (motile programme)** | Lower in ASD in GSE67528 neurons, GSE124308 neurons and GSE142670 NPCs (cameraPR); not in GSE142670 neurons. Adjusting for *FOXJ1* weakens but does not remove the signal |
+| **MYC targets / cell cycle (NPCs)** | Higher in ASD NPCs in both cohorts (cameraPR FDR 4.7 × 10⁻³ and 3.9 × 10⁻⁷) |
+| Interferon | Lower only in GSE124308, the cohort in which iPSC source is confounded with diagnosis |
+
+**Interpretation.** The signal is a weak but reproducible shift spread across many genes, not a set of large-effect genes. The cilia result most likely reflects how many ciliated (FOXJ1-positive) cells each culture contains. The confirmation stage tests these points in independent data.
+
+Figures: `results/figures/submission/` (Fig 2–4, S1–S5). Draft legends: [`docs/figure_legends_draft.md`](docs/figure_legends_draft.md).
+
+---
+
+## What changed from the pilot
+
+The pilot (archived in `legacy/` and at git tag `pilot-v0`) analysed GSE67528 and GSE124308 with DESeq2 + SVA and reported 39 DEGs, KLF4, and interferon/MHC-I hub genes. Re-analysis showed that those results were artefacts:
+
+| Problem in the pilot | Fix in this version |
+|---|---|
+| **Alternative-haplotype and patch gene IDs** were counted as separate genes. The HLA/MHC "hits" came from genes duplicated across ALT contigs | Restricted to primary-assembly genes (chromosomes 1–22, X, Y, MT; Ensembl release 115) |
+| **Pseudoreplication**: clones and replicates from the same donor were treated as independent samples | `dream` mixed models with donor as a random effect |
+| **Developmental stages were pooled** (iPSC, NPC and neurons in one model) | Separate analyses for each stage |
+| Gene overlap (Venn diagram) plus random-effects meta-analysis of two cohorts | Pre-specified protocol, 3 discovery cohorts, direction-replication test, correlation-aware gene-set tests (cameraPR) |
+| Confounding of iPSC source with diagnosis in GSE124308 not addressed | Documented, with a sensitivity model that adjusts for source |
+
+---
+
+## Pipeline
+
+All analysis runs in a [pixi](https://pixi.sh) environment (`pixi.toml`; conda-forge and bioconda, linux-64; developed under WSL Ubuntu).
+
+| Step | Script | What it does |
+|---|---|---|
+| 00a | `00a_get_ensembl_annotation.sh` | Downloads the Ensembl 115 GTF and extracts gene ID, chromosome, symbol and biotype |
+| 00b | `00b_geo_metadata.R` | Downloads full GEO sample annotation (pilot cohorts) |
+| 00c | `00c_tidy_metadata.R` | Tidy metadata for GSE67528 and GSE124308: donor, clone, stage, time point, iPSC source |
+| 00d | `00d_inspect_geo.R` | Prints GEO fields, processing notes and supplementary files for new accessions |
+| 00e | `00e_tidy_metadata_new.R` | Tidy metadata for GSE142670 and GSE61476 |
+| 00f | `00f_get_author_counts.R` | Downloads per-sample author count files and assembles a count matrix |
+| 01a | `01a_filter_primary_genes.R` | Keeps primary-assembly genes; removes ALT/patch and retired IDs |
+| 01b | `01b_DE_dream.R` | Donor-aware differential expression (filterByExpr, TMM, voomWithDreamWeights, `dream`) |
+| 01c | `01c_DE_diagnostics.R` | π1, p-value histograms, cross-cohort concordance |
+| 02 | `02_meta_analysis.R` | Random-effects meta-analysis (REML, Hartung–Knapp ad hoc), weighted Stouffer, leave-one-cohort-out replication |
+| 03 | `03_cell_composition.R` | Marker-gene composition scores, donor-level tests, neuron-adjusted refits |
+| 04 | `04_pathway_analysis.R` | fgsea screening (Hallmark, GO:BP, Reactome) |
+| 05 | `05_cilia_check.R` | cameraPR, motile vs primary cilia sets, leading edge, ependymal markers |
+| 06 | `06_cilia_foxj1_adjusted.R` | Refits adjusted for FOXJ1 or a motile-cilia score |
+| 07 | `07_figures.R` | First-draft descriptive figures (superseded by 07b) |
+| 07b | `07b_figures_revised.R` | Submission figures: Fig 3, S1–S5 |
+| 08 | `08_main_figures.R` | Submission figures: Fig 2 (H1) and Fig 4 (H2) |
+
+### How to run
+
+```bash
+git clone https://github.com/mr-mahabubur-rahman/asd_bulk-rnaseq-meta-analysis.git
+cd asd_bulk-rnaseq-meta-analysis
+pixi install
+
+bash scripts/00a_get_ensembl_annotation.sh
+pixi run geo-metadata                                   # 00b
+pixi run tidy-metadata                                  # 00c
+pixi run Rscript scripts/00d_inspect_geo.R GSE142670 GSE61476
+pixi run Rscript scripts/00e_tidy_metadata_new.R
+pixi run Rscript scripts/00f_get_author_counts.R GSE142670 GSE61476
+pixi run Rscript scripts/01a_filter_primary_genes.R GSE67528 GSE124308 GSE142670
+pixi run de-dream                                       # 01b (slowest step)
+pixi run de-diagnostics                                 # 01c
+for s in 02_meta_analysis 03_cell_composition 04_pathway_analysis 05_cilia_check \
+         06_cilia_foxj1_adjusted 08_main_figures 07b_figures_revised; do
+  pixi run bash -c "mkdir -p logs && Rscript scripts/$s.R 2>&1 | tee logs/$s.log"
+done
 ```
-Raw counts ──→ DESeq2 + SVA ──→ Annotation ──→ Venn overlap ──→ Meta-analysis (REM)
-     │                                                              │
-     └──────────────────────────────────────────────────────────────→│
-                                                                    ↓
-                                              Volcano plot + Heatmaps
-                                                                    ↓
-                                              Enrichment (GO/KEGG/Hallmark/Reactome)
-                                                                    ↓
-                                              PPI Network (STRING) + Hub genes
-                                                                    ↓
-                                              Composite panel figure
-```
 
-## Repository Structure
+Every step writes a log to `logs/`. Scripts 07 and 07b query the STRING API, and 00a/00b/00f need internet access.
+
+### Input data
+
+The discovery analysis uses **deposited count matrices**: the series-level tables for GSE67528 and GSE124308, and the authors' per-sample count files for GSE142670. All three are harmonised to Ensembl 115 primary-assembly gene IDs. The protocol's main analysis will use **uniform Salmon re-quantification from FASTQ** for every dataset. The deposited counts will be kept as a sensitivity analysis.
+
+---
+
+## Repository structure
 
 ```
 asd_bulk-rnaseq-meta-analysis/
 ├── README.md
 ├── LICENSE
-├── scripts/
-│   ├── 00_Setup.R                         # Package installation
-│   ├── 01_DESeq2.R                        # Differential expression + SVA batch correction
-│   ├── 02_annotation.R                    # Gene annotation (genekitr → symbol/description/biotype)
-│   ├── 03_common_genes_venn.R             # Venn diagram + overlap analysis
-│   ├── 04_meta_analysis_metavolcano.R     # Random-effects meta-analysis (metafor/MetaVolcanoR)
-│   ├── 05_meta_summary.R                  # Meta-analysis summary + cross-referencing
-│   ├── 06_volcano_plot.R                  # Publication-style volcano plot
-│   ├── 07_enrichment_analysis.R           # ORA (GO/KEGG/Reactome) + GSEA (GO-BP/KEGG/Hallmark)
-│   ├── 08_network_analysis.R              # STRING PPI network + hub genes + community detection
-│   ├── 09_heatmap.R                       # Z-score expression heatmap (ComplexHeatmap)
-│   ├── 10_composite_panel.R               # Multi-panel publication figure
-│   └── 11_publication_tables.R            # Formatted publication tables (gt/flextable, DOCX + PNG)
+├── pixi.toml / pixi.lock
+├── docs/
+│   ├── protocol_v0.3.pdf, protocol_v1.0.pdf   # protocol versions (frozen)
+│   └── figure_legends_draft.md
+├── scripts/                                   # 00a–08, run in order (see table)
+├── legacy/                                    # withdrawn pilot pipeline (read-only)
 ├── data/
-│   ├── raw_counts/
-│   │   ├── GSE67528_raw_counts.csv        # Gene-level raw counts (GeneID + samples)
-│   │   └── GSE124308_raw_counts.csv
-│   └── metadata/
-│       ├── GSE67528_metadata.csv          # Sample ID + condition (ASD / healthy control)
-│       └── GSE124308_metadata.csv
-└── results/                               # Generated by the pipeline (not tracked in git)
-    ├── tables/
-    │   ├── DESeq2/                        # Per-dataset DE results
-    │   ├── annotated/                     # Annotated DE results (protein-coding only)
-    │   ├── venn/                          # Overlap tables, common genes
-    │   ├── meta-analysis/                 # REM results, filtered DEGs, combining approach
-    │   ├── enrichment/                    # GO/KEGG/Hallmark/Reactome CSV tables
-    │   ├── network/                       # Network metrics, hub genes, modules
-    │   └── publication/                   # Formatted publication tables (DOCX)
-    └── figures/
-        ├── PCA/                           # Pre/post SVA correction PCA plots
-        ├── venn/                          # Venn diagram
-        ├── meta-analysis/                 # Volcano plot
-        ├── enrichment/                    # Dotplots, enrichment score plots
-        ├── network/                       # PPI network, hub gene barplot
-        ├── heatmap/                       # Z-score + mean log2FC heatmaps
-        ├── composite/                     # Multi-panel publication figure
-        └── tables/                        # Publication table images (PNG)
+│   ├── annotation/            # Ensembl 115 gene table
+│   ├── metadata/              # GEO annotation + tidy metadata per dataset
+│   ├── raw_counts/            # deposited count matrices (pilot cohorts)
+│   ├── raw_counts_author/     # assembled author counts (GSE142670)
+│   └── raw_counts_primary/    # primary-assembly genes only (analysis input)
+├── logs/                      # one log per script run
+└── results/
+    ├── tables/                # DE_dream/, meta/, composition/, pathways, cilia/, figures/
+    └── figures/submission/    # Fig 2–4 and S1–S5 (PDF + PNG)
 ```
 
-## How to Run
+---
 
-### Prerequisites
+## Methods references
 
-- **R ≥ 4.6** with Bioconductor
-- Internet access for initial package installation, KEGG API, and STRING API
-- ~4 GB RAM minimum (VST transformation on 83-sample dataset)
+- **Differential expression:** edgeR (Robinson et al., 2010); limma/voom (Ritchie et al., 2015; Law et al., 2014); dream and variancePartition (Hoffman & Roussos, 2021; Hoffman & Schadt, 2016)
+- **Meta-analysis:** metafor (Viechtbauer, 2010); Hartung–Knapp ad hoc correction (Röver et al., 2015); weighted Z (Whitlock, 2005)
+- **Gene sets:** fgsea (Korotkevich et al.); camera (Wu & Smyth, 2012); MSigDB Hallmark (Liberzon et al., 2015)
+- **Reporting:** PRISMA-P 2015 (Moher et al.) and PRISMA 2020 (Page et al.)
 
-### Step-by-step
-
-1. **Clone this repository:**
-   ```bash
-   git clone https://github.com/Mahabubur7/asd_bulk-rnaseq-meta-analysis.git
-   cd asd_bulk-rnaseq-meta-analysis
-   ```
-
-2. **Install packages** (run once — takes ~20 min):
-   ```r
-   source("scripts/00_Setup.R")
-   ```
-
-3. **Run the pipeline** (scripts must be run in order):
-   ```r
-   source("scripts/01_DESeq2.R")
-   source("scripts/02_annotation.R")
-   source("scripts/03_common_genes_venn.R")
-   source("scripts/04_meta_analysis_metavolcano.R")
-   source("scripts/05_meta_summary.R")
-   source("scripts/06_volcano_plot.R")
-   source("scripts/07_enrichment_analysis.R")
-   source("scripts/08_network_analysis.R")
-   source("scripts/09_heatmap.R")
-   source("scripts/10_composite_panel.R")
-   source("scripts/11_publication_tables.R")
-   ```
-
-   Each script reads outputs from the previous step (saved as CSV/RDS files), so they can also be run individually for debugging or re-analysis.
-
-### Expected runtime
-
-| Script | Duration | Notes |
-|--------|----------|-------|
-| 01_DESeq2 | ~5 min | SVA + DESeq2 per dataset |
-| 02_annotation | ~1 min | genekitr API call |
-| 03_venn | < 1 min | |
-| 04_meta_analysis | ~2 min | REM per gene (~20K genes) |
-| 05–06 | < 1 min | Summary + volcano |
-| 07_enrichment | ~3 min | ORA + GSEA (KEGG requires internet) |
-| 08_network | ~1 min | STRING API call |
-| 09_heatmap | ~2 min | VST on both datasets |
-| 10_composite | < 1 min | Panel assembly |
-| 11_publication_tables | ~1 min | gt/flextable rendering, webshot2 |
-
-## Technical Notes
-
-### MetaVolcanoR compatibility
-
-The `iza-mcac/MetaVolcanoR` GitHub fork has confirmed bugs with ggplot2 4.0+ (S4 class slot mismatch). Script 04 includes automatic fallback functions that reproduce the same random-effects meta-analysis statistics directly via `metafor::rma()` and Fisher's method, bypassing the broken MetaVolcanoR internals. The fallback activates automatically via `tryCatch` — no manual intervention needed.
-
-### Ensembl ID handling
-
-Raw count matrices use Ensembl gene IDs (`ENSG...`). Script 07 handles the ID type mismatch:
-- GO enrichment: `keyType = "ENSEMBL"` passed directly to `enrichGO`/`gseGO`
-- KEGG, Reactome, Hallmark: automatic Ensembl → Entrez conversion via `bitr()`
-
-### Data format requirements
-
-If adapting this pipeline to other datasets:
-- **Raw counts:** CSV with gene IDs as the first column (header: any name — script renames to `GeneID`), sample GSM IDs as remaining columns
-- **Metadata:** CSV with columns `sample` and `condition`
-- Non-integer counts (e.g., RSEM expected counts) are handled automatically
+Full citations are in the protocol.
 
 ## Citation
 
-If you use this pipeline or its results, please cite:
+Until the protocol and paper are published, please cite this repository:
 
-> Rahman M. Cross-Cohort Replication of Transcriptomic Dysregulation in Autism Spectrum Disorder: A Meta-Analysis of Two Independent Patient-Derived iPSC RNA-Seq Datasets. 2026. GitHub: https://github.com/Mahabubur7/asd_bulk-rnaseq-meta-analysis
-
-### Key references
-
-- Marchetto MC, et al. *Mol Psychiatry*. 2017;22(6):820–835. (GSE67528)
-- DeRosa BA, et al. *Sci Rep*. 2018;8:8423. (GSE124308)
-- Helal MMU, et al. *BMC Genomics*. 2025;26:999. (Methodological framework)
-- Love MI, et al. *Genome Biol*. 2014;15(12):550. (DESeq2)
-- Viechtbauer W. *J Stat Softw*. 2010;36(3):1–48. (metafor)
+> Rahman M, Islam M. Transcriptomic alterations in iPSC-derived neural models of idiopathic autism: protocol for a systematic review and donor-aware meta-analysis of re-processed RNA-seq data. Version 1.0. 2026. https://github.com/mr-mahabubur-rahman/asd_bulk-rnaseq-meta-analysis
 
 ## License
 
-This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
+MIT — see [LICENSE](LICENSE). The datasets belong to their original authors and are subject to the terms of GEO, ArrayExpress, Synapse and NDA.
