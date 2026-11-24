@@ -1,0 +1,7 @@
+Cohort,Reference,Design,Stage analysed,"Donors, ASD / control","Samples, ASD / control",Samples per donor,Count data,Model (dream)
+GSE67528,Marchetto et al. 2017 [1],"2D; iPSC, NPC, neurons",NPC,8 / 6,21 / 9,1–4,Series count matrix (GEO),~ condition + (1 | donor)
+GSE67528,Marchetto et al. 2017 [1],"2D; iPSC, NPC, neurons",Neurons (mixed culture),8 / 5,17 / 8,1–3,Series count matrix (GEO),~ condition + (1 | donor)
+GSE124308,DeRosa et al. 2018 [2],2D cortical neurons; day 35 and 135,Neurons (d35: n = 11; d135: n = 11),6 / 5,12 / 10,2,Series count matrix (GEO),~ condition + time point + (1 | donor)
+GSE142670,Griesi-Oliveira et al. 2021 [3],"2D; NPC, mixed neuronal cultures, FACS-sorted neurons",NPC,6 / 6,16 / 13,1–3,Authors' per-sample counts (GEO),~ condition + (1 | donor)
+GSE142670,Griesi-Oliveira et al. 2021 [3],"2D; NPC, mixed neuronal cultures, FACS-sorted neurons",Neurons (mixed culture),6 / 4,9 / 7,1–2,Authors' per-sample counts (GEO),~ condition + (1 | donor)
+GSE142670,Griesi-Oliveira et al. 2021 [3],"2D; NPC, mixed neuronal cultures, FACS-sorted neurons",Neurons (FACS-sorted),3 / 3,3 / 4,1–2,Authors' per-sample counts (GEO),~ condition + (1 | donor)

@@ -1,0 +1,25 @@
+section,metric,value
+gene level,genes_both,17656
+gene level,spearman_t,0.786861400529868
+gene level,same_sign_share,0.791345718169461
+gene level,p_lt_0.05_full,1629
+gene level,p_lt_0.05_reduced,1201
+gene level,fdr_lt_0.05_reduced,0
+cameraPR,HALLMARK_INTERFERON_ALPHA_RESPONSE | full,"Down, p = 0.000509"
+cameraPR,HALLMARK_INTERFERON_GAMMA_RESPONSE | full,"Down, p = 0.0172"
+cameraPR,HALLMARK_MYC_TARGETS_V1 | full,"Up, p = 0.203"
+cameraPR,REACTOME_EUKARYOTIC_TRANSLATION_INITIATION | full,"Up, p = 0.00803"
+cameraPR,GOBP_AXONEME_ASSEMBLY | full,"Down, p = 0.00261"
+cameraPR,CURATED_MOTILE_CILIA | full,"Down, p = 0.000584"
+cameraPR,HALLMARK_INTERFERON_ALPHA_RESPONSE | adjusted for iPSC source,"Down, p = 1.25e-09"
+cameraPR,HALLMARK_INTERFERON_GAMMA_RESPONSE | adjusted for iPSC source,"Down, p = 0.000243"
+cameraPR,HALLMARK_MYC_TARGETS_V1 | adjusted for iPSC source,"Down, p = 0.00444"
+cameraPR,REACTOME_EUKARYOTIC_TRANSLATION_INITIATION | adjusted for iPSC source,"Down, p = 0.142"
+cameraPR,GOBP_AXONEME_ASSEMBLY | adjusted for iPSC source,"Down, p = 0.339"
+cameraPR,CURATED_MOTILE_CILIA | adjusted for iPSC source,"Down, p = 0.264"
+cameraPR,HALLMARK_INTERFERON_ALPHA_RESPONSE | without 101/102,"Down, p = 7.35e-11"
+cameraPR,HALLMARK_INTERFERON_GAMMA_RESPONSE | without 101/102,"Down, p = 3.78e-05"
+cameraPR,HALLMARK_MYC_TARGETS_V1 | without 101/102,"Down, p = 0.206"
+cameraPR,REACTOME_EUKARYOTIC_TRANSLATION_INITIATION | without 101/102,"Up, p = 0.239"
+cameraPR,GOBP_AXONEME_ASSEMBLY | without 101/102,"Down, p = 0.0863"
+cameraPR,CURATED_MOTILE_CILIA | without 101/102,"Down, p = 0.0318"

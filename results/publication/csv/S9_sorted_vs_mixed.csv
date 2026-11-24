@@ -1,0 +1,32 @@
+section,stage,score,mean_ctrl,mean_asd,diff_asd_minus_ctrl,t_p,mean_shift,p_paired,pair,spearman_all,spearman_top500,asd_dir_other,genes,mean_sorting_t,share_depleted_by_sorting,share_same_dir_mixed,share_same_dir_sorted
+"composition, ASD vs control",Neuron,gabaergic,-0.566,-0.1696,0.3964,0.3708,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, ASD vs control",Neuron,glia,0.501,0.3099,-0.1911,0.5997,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, ASD vs control",Neuron,glutamatergic,-0.2745,-0.1556,0.1189,0.649,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, ASD vs control",Neuron,motile_cilia,0.1943,0.1567,-0.03759,0.8944,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, ASD vs control",Neuron,neuron,-0.4563,-0.4361,0.02019,0.9603,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, ASD vs control",Neuron,non_neural,0.307,0.3167,0.009717,0.9797,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, ASD vs control",Neuron,progenitor,0.5862,0.4264,-0.1598,0.6456,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, ASD vs control",Neuron,proliferation,0.2353,0.6162,0.381,0.3672,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, ASD vs control",Neuron_sorted,gabaergic,0.3604,1.01,0.6498,0.3204,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, ASD vs control",Neuron_sorted,glia,-0.7895,-0.3977,0.3918,0.4372,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, ASD vs control",Neuron_sorted,glutamatergic,0.4084,0.47,0.06167,0.4775,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, ASD vs control",Neuron_sorted,motile_cilia,-0.5613,-0.3381,0.2232,0.593,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, ASD vs control",Neuron_sorted,neuron,0.8841,0.9403,0.05619,0.8816,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, ASD vs control",Neuron_sorted,non_neural,-0.8697,-0.6153,0.2544,0.7418,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, ASD vs control",Neuron_sorted,progenitor,-0.7501,-0.878,-0.1279,0.839,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, ASD vs control",Neuron_sorted,proliferation,-1.104,-1.018,0.08644,0.7483,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, sorted minus mixed",NA,gabaergic,NA,NA,NA,NA,0.7129,0.02062,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, sorted minus mixed",NA,glia,NA,NA,NA,NA,-1.032,0.02592,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, sorted minus mixed",NA,glutamatergic,NA,NA,NA,NA,0.6342,0.006363,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, sorted minus mixed",NA,motile_cilia,NA,NA,NA,NA,-0.7556,0.001634,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, sorted minus mixed",NA,neuron,NA,NA,NA,NA,1.096,0.003844,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, sorted minus mixed",NA,non_neural,NA,NA,NA,NA,-0.7195,0.06557,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, sorted minus mixed",NA,progenitor,NA,NA,NA,NA,-1.267,0.003642,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"composition, sorted minus mixed",NA,proliferation,NA,NA,NA,NA,-1.205,0.00316,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Spearman correlations,NA,NA,NA,NA,NA,NA,NA,NA,ASD effect: mixed vs sorted (GSE142670),0.1183,0.02787,NA,NA,NA,NA,NA,NA
+Spearman correlations,NA,NA,NA,NA,NA,NA,NA,NA,ASD effect: other cohorts vs mixed,0.1029,0.1681,NA,NA,NA,NA,NA,NA
+Spearman correlations,NA,NA,NA,NA,NA,NA,NA,NA,ASD effect: other cohorts vs sorted,-0.1821,-0.312,NA,NA,NA,NA,NA,NA
+Spearman correlations,NA,NA,NA,NA,NA,NA,NA,NA,sorting effect vs ASD effect in other cohorts,0.1934,0.3744,NA,NA,NA,NA,NA,NA
+Spearman correlations,NA,NA,NA,NA,NA,NA,NA,NA,sorting effect vs ASD effect in sorted,-0.3554,-0.3877,NA,NA,NA,NA,NA,NA
+top-500 replication genes,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,higher in ASD (other cohorts),166,0.2638,0.494,0.5783,0.4578
+top-500 replication genes,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,lower in ASD (other cohorts),334,-2.328,0.7934,0.6437,0.2605
