@@ -1,0 +1,25 @@
+[workspace]
+name = "asd-bulk-rnaseq-meta-analysis"
+channels = ["conda-forge", "bioconda"]
+platforms = ["linux-64"]
+
+[dependencies]
+r-base = "*"
+r-tidyverse = "*"
+r-rio = "*"
+bioconductor-geoquery = "*"
+bioconductor-biomart = "*"
+bioconductor-edger = ">=4.8.2,<5"
+bioconductor-limma = ">=3.66.0,<4"
+bioconductor-variancepartition = ">=1.40.2,<2"
+bioconductor-biocparallel = ">=1.44.0,<2"
+r-metafor = ">=5.0_1,<6"
+bioconductor-fgsea = ">=1.36.2,<2"
+r-msigdbr = ">=26.1.1,<27"
+
+[tasks]
+geo-metadata   = "mkdir -p logs && Rscript scripts/00b_geo_metadata.R 2>&1 | tee logs/00b_geo_metadata.log"
+filter-primary = "mkdir -p logs && Rscript scripts/01a_filter_primary_genes.R 2>&1 | tee logs/01a_filter_primary_genes.log"
+tidy-metadata = "mkdir -p logs && Rscript scripts/00c_tidy_metadata.R 2>&1 | tee logs/00c_tidy_metadata.log"
+de-dream = "mkdir -p logs && Rscript scripts/01b_DE_dream.R 2>&1 | tee logs/01b_DE_dream.log"
+de-diagnostics = "mkdir -p logs && Rscript scripts/01c_DE_diagnostics.R 2>&1 | tee logs/01c_DE_diagnostics.log"
