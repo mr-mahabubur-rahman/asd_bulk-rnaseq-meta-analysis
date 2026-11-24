@@ -7,3 +7,8 @@
 # Word temp lock files
 ~$*
 data/raw/
+
+# Route A
+.pixi/
+data/annotation/*.gtf.gz
+data/raw/

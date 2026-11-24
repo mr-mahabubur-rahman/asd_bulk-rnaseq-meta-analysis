@@ -20,6 +20,7 @@ r-ggrepel = ">=0.9.8,<0.10"
 r-upsetr = ">=1.4.1,<2"
 r-igraph = ">=2.3.4,<3"
 r-ggraph = ">=2.2.2,<3"
+r-patchwork = ">=1.3.2,<2"
 
 [tasks]
 geo-metadata   = "mkdir -p logs && Rscript scripts/00b_geo_metadata.R 2>&1 | tee logs/00b_geo_metadata.log"

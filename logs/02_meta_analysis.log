@@ -1,0 +1,169 @@
+
+==================== neuron_primary ====================
+Datasets: GSE67528_Neuron, GSE124308_both, GSE142670_Neuron
+Genes in >= 3 datasets: 14574
+Fitting random-effects models (a few minutes)...
+
+Summary:
+# A tibble: 1 × 8
+  analysis       datasets genes_tested   pi1 fdr_lt_0.05 robust
+  <chr>             <int>        <int> <dbl>       <int>  <int>
+1 neuron_primary        3        14574     0           0      0
+  stouffer_fdr_lt_0.05 min_fdr
+                 <int>   <dbl>
+1                    0   1.000
+
+Top 20 genes by random-effects p:
+# A tibble: 20 × 11
+   Gene_Symbol     k    est    ci_lb    ci_ub      p   fdr       I2 same_sign
+   <chr>       <int>  <dbl>    <dbl>    <dbl>  <dbl> <dbl>    <dbl> <lgl>    
+ 1 DUSP7           3  0.492  0.0258   0.958   0.0452 1.000 0        TRUE     
+ 2 CELSR1          3 -0.821 -1.60    -0.0410  0.0455 1.000 0.00210  TRUE     
+ 3 RAMP1           3 -1.12  -2.20    -0.0338  0.0472 1.000 0        TRUE     
+ 4 LGR5            3  1.74  -0.00409  3.48    0.0502 1.000 0        TRUE     
+ 5 PDIA5           3 -0.598 -1.20     0.00693 0.0511 1.000 0        TRUE     
+ 6 PACRG           3 -0.660 -1.34     0.0210  0.0530 1.000 0        TRUE     
+ 7 LGALS3BP        3 -0.537 -1.13     0.0603  0.0608 1.000 0        TRUE     
+ 8 RIBC1           3 -0.652 -1.38     0.0770  0.0614 1.000 0        TRUE     
+ 9 TFAP4           3  0.454 -0.0672   0.975   0.0644 1.000 0        TRUE     
+10 PON2            3 -0.634 -1.36     0.0961  0.0648 1.000 0        TRUE     
+11 PLEKHB1         3 -0.688 -1.48     0.108   0.0654 1.000 0.00175  TRUE     
+12 AFAP1-AS1       3  0.480 -0.0789   1.04    0.0661 1.000 0        TRUE     
+13 ANKRD42         3 -0.266 -0.575    0.0438  0.0661 1.000 0        TRUE     
+14 WLS             3 -0.734 -1.61     0.141   0.0690 1.000 0        TRUE     
+15 TCP11L1         3  0.238 -0.0490   0.525   0.0704 1.000 0        TRUE     
+16 PLEKHA4         3 -0.580 -1.28     0.123   0.0710 1.000 0        TRUE     
+17 TVP23A          3 -0.519 -1.15     0.111   0.0713 1.000 0        FALSE    
+18 MANSC1          3 -0.449 -0.996    0.0970  0.0714 1.000 0.000118 TRUE     
+19 PPP1R17         3 -1.12  -2.49     0.243   0.0714 1.000 0        TRUE     
+20 CC2D2A          3 -0.363 -0.806    0.0804  0.0720 1.000 0        TRUE     
+       st_p robust
+      <dbl> <lgl> 
+ 1 0.000138 FALSE 
+ 2 0.000214 FALSE 
+ 3 0.000372 FALSE 
+ 4 0.000160 FALSE 
+ 5 0.000622 FALSE 
+ 6 0.000298 FALSE 
+ 7 0.000483 FALSE 
+ 8 0.000759 FALSE 
+ 9 0.000530 FALSE 
+10 0.00163  FALSE 
+11 0.00167  FALSE 
+12 0.00680  FALSE 
+13 0.00120  FALSE 
+14 0.00327  FALSE 
+15 0.00203  FALSE 
+16 0.00666  FALSE 
+17 0.0189   FALSE 
+18 0.00260  FALSE 
+19 0.00191  FALSE 
+20 0.00235  FALSE 
+
+Leave-one-cohort-out replication:
+# A tibble: 3 × 7
+  held_out         genes
+  <chr>            <int>
+1 GSE67528_Neuron    500
+2 GSE124308_both     500
+3 GSE142670_Neuron   500
+  rule                                                            
+  <chr>                                                           
+1 top 500 by p in the other datasets (fewer than 50 at FDR < 0.05)
+2 top 500 by p in the other datasets (fewer than 50 at FDR < 0.05)
+3 top 500 by p in the other datasets (fewer than 50 at FDR < 0.05)
+  same_direction share       binom_p pi1_held_out
+           <int> <dbl>         <dbl>        <dbl>
+1            315 0.63  0.00000000330        0.146
+2            311 0.622 0.0000000270         0.338
+3            309 0.618 0.0000000737         0    
+
+==================== neuron_sens_sorted ====================
+Datasets: GSE67528_Neuron, GSE124308_both, GSE142670_Neuron_sorted
+Genes in >= 3 datasets: 14476
+Fitting random-effects models (a few minutes)...
+
+Summary:
+# A tibble: 1 × 8
+  analysis           datasets genes_tested   pi1 fdr_lt_0.05 robust
+  <chr>                 <int>        <int> <dbl>       <int>  <int>
+1 neuron_sens_sorted        3        14476     0           0      0
+  stouffer_fdr_lt_0.05 min_fdr
+                 <int>   <dbl>
+1                    0   0.999
+
+Top 20 genes by random-effects p:
+# A tibble: 20 × 11
+   Gene_Symbol     k    est   ci_lb   ci_ub      p   fdr      I2 same_sign
+   <chr>       <int>  <dbl>   <dbl>   <dbl>  <dbl> <dbl>   <dbl> <lgl>    
+ 1 CELSR1          3 -0.935 -1.80   -0.0689 0.0434 0.999 0       TRUE     
+ 2 C3orf20         3  0.789  0.0544  1.52   0.0438 0.999 0       TRUE     
+ 3 CNPY1           3  0.981 -0.0641  2.03   0.0562 0.999 0       TRUE     
+ 4 ARPP21          3 -0.894 -1.86    0.0669 0.0571 0.999 0       TRUE     
+ 5 ZC2HC1C         3 -0.640 -1.35    0.0744 0.0612 0.999 0       TRUE     
+ 6 P4HTM           3 -0.461 -0.978   0.0568 0.0619 0.999 0       TRUE     
+ 7 TVP23A          3 -0.569 -1.23    0.0865 0.0648 0.999 0       TRUE     
+ 8 SCML1           3  0.471 -0.0766  1.02   0.0659 0.999 0       TRUE     
+ 9 TMEM179         3 -0.608 -1.32    0.106  0.0670 0.999 0       TRUE     
+10 TRIM17          3 -0.327 -0.720   0.0659 0.0699 0.999 0.00121 TRUE     
+11 MANSC1          3 -0.485 -1.07    0.0992 0.0702 0.999 0       FALSE    
+12 RIBC1           3 -0.724 -1.60    0.151  0.0707 0.999 0       TRUE     
+13 TAF3            3  0.293 -0.0639  0.650  0.0717 0.999 0.00259 FALSE    
+14 PLEKHA4         3 -0.608 -1.35    0.133  0.0717 0.999 0       FALSE    
+15 LSM7            3  0.220 -0.0484  0.488  0.0719 0.999 0       FALSE    
+16 PSTPIP2         3  0.501 -0.114   1.12   0.0727 0.999 0       FALSE    
+17 USP14           3  0.279 -0.0640  0.622  0.0728 0.999 0       TRUE     
+18 ZCCHC7          3  0.291 -0.0717  0.653  0.0746 0.999 0.00872 TRUE     
+19 MEF2C           3 -0.761 -1.71    0.193  0.0754 0.999 0       TRUE     
+20 GSK3B           3  0.315 -0.0802  0.711  0.0755 0.999 0       TRUE     
+       st_p robust
+      <dbl> <lgl> 
+ 1 0.000452 FALSE 
+ 2 0.00191  FALSE 
+ 3 0.000720 FALSE 
+ 4 0.00148  FALSE 
+ 5 0.00612  FALSE 
+ 6 0.000372 FALSE 
+ 7 0.00935  FALSE 
+ 8 0.0150   FALSE 
+ 9 0.0339   FALSE 
+10 0.00104  FALSE 
+11 0.00486  FALSE 
+12 0.00495  FALSE 
+13 0.00213  FALSE 
+14 0.00976  FALSE 
+15 0.0142   FALSE 
+16 0.00626  FALSE 
+17 0.00432  FALSE 
+18 0.00102  FALSE 
+19 0.00485  FALSE 
+20 0.00653  FALSE 
+
+Leave-one-cohort-out replication:
+# A tibble: 3 × 7
+  held_out                genes
+  <chr>                   <int>
+1 GSE67528_Neuron           500
+2 GSE124308_both            500
+3 GSE142670_Neuron_sorted   500
+  rule                                                            
+  <chr>                                                           
+1 top 500 by p in the other datasets (fewer than 50 at FDR < 0.05)
+2 top 500 by p in the other datasets (fewer than 50 at FDR < 0.05)
+3 top 500 by p in the other datasets (fewer than 50 at FDR < 0.05)
+  same_direction share binom_p pi1_held_out
+           <int> <dbl>   <dbl>        <dbl>
+1            274 0.548  0.0177       0.0982
+2            223 0.446  0.993        0.166 
+3            163 0.326  1.000        0     
+
+==================== NPC: direct comparison ====================
+# A tibble: 6 × 5
+  discovery     top_n share       binom_p spearman_t
+  <chr>         <dbl> <dbl>         <dbl>      <dbl>
+1 GSE67528_NPC    100 0.57  0.0967             0.161
+2 GSE142670_NPC   100 0.6   0.0284             0.161
+3 GSE67528_NPC    250 0.56  0.0332             0.161
+4 GSE142670_NPC   250 0.644 0.00000309         0.161
+5 GSE67528_NPC    500 0.56  0.00413            0.161
+6 GSE142670_NPC   500 0.632 0.00000000191      0.161

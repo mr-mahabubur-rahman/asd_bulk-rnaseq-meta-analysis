@@ -1,0 +1,23 @@
+sample,title,condition,donor,timepoint,ipsc_source,reprogramming,sex
+GSM3528727,ASD 709_35,ASD,709,d35,peripheral blood mononuclear cells,Sendai virus,male
+GSM3528728,ASD 134_35,ASD,134,d35,peripheral blood mononuclear cells,Sendai virus,male
+GSM3528729,ASD 732_35,ASD,732,d35,peripheral blood mononuclear cells,Sendai virus,male
+GSM3528730,Cont 101_35,Control,101,d35,fibroblast,Retrovirus,male
+GSM3528731,Cont 102_35,Control,102,d35,fibroblast,Retrovirus,male
+GSM3528732,Cont 1021_35,Control,1021,d35,fibroblast,Sendai virus,male
+GSM3528733,ASD 691_35,ASD,691,d35,peripheral blood mononuclear cells,Sendai virus,male
+GSM3528734,ASD 725_35,ASD,725,d35,peripheral blood mononuclear cells,Sendai virus,male
+GSM3528735,ASD 110_35,ASD,110,d35,peripheral blood mononuclear cells,Sendai virus,male
+GSM3528736,Cont 574_35,Control,574,d35,peripheral blood mononuclear cells,Sendai virus,male
+GSM3528737,Cont 114_35,Control,114,d35,peripheral blood mononuclear cells,Sendai virus,male
+GSM3528738,ASD 732_135,ASD,732,d135,peripheral blood mononuclear cells,Sendai virus,male
+GSM3528739,ASD 709_135,ASD,709,d135,peripheral blood mononuclear cells,Sendai virus,male
+GSM3528740,ASD 134_135,ASD,134,d135,peripheral blood mononuclear cells,Sendai virus,male
+GSM3528741,ASD 691_135,ASD,691,d135,peripheral blood mononuclear cells,Sendai virus,male
+GSM3528742,ASD 725_135,ASD,725,d135,peripheral blood mononuclear cells,Sendai virus,male
+GSM3528743,ASD 110_135,ASD,110,d135,peripheral blood mononuclear cells,Sendai virus,male
+GSM3528744,Cont 101_135,Control,101,d135,fibroblast,Retrovirus,male
+GSM3528745,Cont 102_135,Control,102,d135,fibroblast,Retrovirus,male
+GSM3528746,Cont 114_135,Control,114,d135,peripheral blood mononuclear cells,Sendai virus,male
+GSM3528747,Cont 1021_135,Control,1021,d135,fibroblast,Sendai virus,male
+GSM3528748,Cont 574_135,Control,574,d135,peripheral blood mononuclear cells,Sendai virus,male

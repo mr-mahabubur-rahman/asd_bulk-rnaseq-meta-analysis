@@ -1,0 +1,180 @@
+
+==================== GSE142670 ====================
+Found 1 file(s)
+GSE142670_series_matrix.txt.gz
+Samples: 52 | platforms: GPL16791
+
+--- title (52 distinct values; first 8) ---
+[1] "F2613.cl1" "F2613.cl2" "F2613.cl3" "F2688.cl4" "F2688.cl5" "F2688.cl6"
+[7] "F2735.cl1" "F2735.cl2"
+
+--- source_name_ch1 ---
+vals
+mixed neuronal cells               neuron                  NPC 
+                  16                    7                   29 
+
+--- library_strategy ---
+vals
+RNA-Seq 
+     52 
+
+--- library_source ---
+vals
+transcriptomic 
+            52 
+
+--- library_selection ---
+vals
+cDNA 
+  52 
+
+--- instrument_model ---
+vals
+Illumina HiSeq 2500 
+                 52 
+
+--- cell type:ch1 ---
+vals
+iPSC-derived;mixed neuronal cells               iPSC-derived;neuron 
+                               16                                 7 
+                 iPSC-derived;NPC 
+                               29 
+
+--- disease status:ch1 ---
+vals
+    ASD Control 
+     28      24 
+
+--- Authors' data processing (first sample) ---
+  * Illumina Casava1.7 software used for basecalling.
+  * Sequenced reads were trimmed for adaptor sequence, and masked for low-complexity or low-quality sequence, then mapped to hg19 genome using TopHat2 v2.0.11.
+  * Read counts per gene were summarized using HTSeq
+  * Genes with FPKM<1 in more than a half of the samples were excluded from the next steps
+  * Genome_build: hg19
+  * Supplementary_files_format_and_content: HTSeq files (.out) contains the count numbers sumarized per gene
+
+--- Supplementary files on GEO ---
+No supplemental files found.
+Check URL manually if in doubt
+https://ftp.ncbi.nlm.nih.gov/geo/series/GSE142nnn/GSE142670/suppl/
+
+--- Relation fields (first 3 samples) ---
+# A tibble: 3 × 2
+  relation                                                      
+  <chr>                                                         
+1 BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN13689790
+2 BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN13689789
+3 BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN13689787
+  relation.1                                           
+  <chr>                                                
+1 SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7449520
+2 SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7449521
+3 SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7449522
+
+==================== GSE61476 ====================
+Found 1 file(s)
+GSE61476_series_matrix.txt.gz
+Samples: 45 | platforms: GPL11154
+
+--- title (45 distinct values; first 8) ---
+[1] "Sample_10_006" "Sample_11_007" "Sample_12_012" "Sample_13_002"
+[5] "Sample_14_004" "Sample_15_005" "Sample_16_006" "Sample_17_007"
+
+--- source_name_ch1 ---
+vals
+     iPSC-derived neural progenitors, day 0, ASD 
+                                               2 
+ iPSC-derived neural progenitors, day 0, non-ASD 
+                                               3 
+    iPSC-derived neural progenitors, day 11, ASD 
+                                               8 
+iPSC-derived neural progenitors, day 11, non-ASD 
+                                              11 
+    iPSC-derived neural progenitors, day 31, ASD 
+                                               8 
+iPSC-derived neural progenitors, day 31, non-ASD 
+                                              13 
+
+--- description (45 distinct values; first 8) ---
+[1] "03-03_4_11"    "03-03_4_31"    "03-04_5_31"    "1123-01_1_0"  
+[5] "1123-02_11_0"  "1123-03_9_0"   "1123-01_1_11"  "1123-02_11_11"
+
+--- library_strategy ---
+vals
+RNA-Seq 
+     45 
+
+--- library_source ---
+vals
+transcriptomic 
+            45 
+
+--- library_selection ---
+vals
+cDNA 
+  45 
+
+--- instrument_model ---
+vals
+Illumina HiSeq 2000 
+                 45 
+
+--- cell type:ch1 ---
+vals
+iPSC-derived neural progenitors 
+                             45 
+
+--- donor id:ch1 ---
+vals
+  03-01   03-02   03-03   03-04   07-01   07-02   07-03 1120-01 1120-03 1123-01 
+      2       2       5       5       3       3       6       4       2       5 
+1123-02 1123-03 
+      3       5 
+
+--- donor's disease state:ch1 ---
+vals
+autism spectrum disorder with macrocephaly 
+                                        18 
+                                unaffected 
+                                        27 
+
+--- donor's gender:ch1 ---
+vals
+female   male 
+     8     37 
+
+--- number of days in vitro in terminal differentiation conditions:ch1 ---
+vals
+ 0 11 31 
+ 5 19 21 
+
+--- Authors' data processing (first sample) ---
+  * Illumina Casava1.8 software was used for basecalling.
+  * Sequenced reads were mapped to the hg19 reference genome and GencdeV7 reference transcriptome using Tophat 1.3.1with parameters : -g 1 -p 4 -r 150 --coverage-search --no-novel-indels --microexon-search -G GFFfile --solexa-quals hg19 FASTQFILE1 FASTQFILE2
+  * Gene expression estimates: Counts were calculated using the BEDTools 2.12.0 function coverageBed with parameters: -abam BAMfilename -b BEDfilename
+  * BAM files were sorted using the samtols 0.1.18 function: samtools sort -n
+  * BAM files were converted to SAM format using the samtols 0.1.18 function: samtools view -h
+  * SAM files were converted to MRF format using the RSEQtools 0.6 function: sam2mrf
+  * Gene expression estimates in RPKM were calculated using the RseqTools function mrfQuantifier with parameters: INTERVALfile multipleOverlap MRFfile
+  * Genome_build: GRCh37 (hg19)
+  * Supplementary_files_format_and_content: Tab-delimited text files include gene expression estimates in RPKM (.rpkm) and COUNTS (.counts.txt) for each sample.
+
+--- Supplementary files on GEO ---
+No supplemental files found.
+Check URL manually if in doubt
+https://ftp.ncbi.nlm.nih.gov/geo/series/GSE61nnn/GSE61476/suppl/
+
+--- Relation fields (first 3 samples) ---
+# A tibble: 3 × 2
+  relation                                                      
+  <chr>                                                         
+1 BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN03069998
+2 BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN03069999
+3 BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN03070000
+  relation.1                                          
+  <chr>                                               
+1 SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX702169
+2 SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX702170
+3 SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX702171
+
+Done. Share this log so we can decide donor/stage parsing and the count source (GEO supplementary counts vs FASTQ re-quantification).

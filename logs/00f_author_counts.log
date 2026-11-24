@@ -1,0 +1,24 @@
+
+==================== GSE142670 ====================
+Samples with a count file: 52 / 52 | samples with >1 file: 0
+
+First lines of GSM4237509_F2613.cl1NPC_htseq.gencode19.out.txt.gz:
+"ENSG00000000003"	1650
+"ENSG00000000005"	4
+"ENSG00000000419"	760
+"ENSG00000000457"	230
+"ENSG00000000460"	396
+"ENSG00000000938"	0
+"ENSG00000000971"	27
+"ENSG00000001036"	527
+
+Gene ID format per file (genes, share with a version suffix):
+# A tibble: 2 × 3
+  genes versioned_share files
+  <int>           <dbl> <int>
+1 57820               0    29
+2 57820               1    23
+
+Assembled matrix: 57820 genes x 52 samples
+Example gene IDs: ENSG00000000003, ENSG00000000005, ENSG00000000419, ENSG00000000457, ENSG00000000460, ENSG00000000938
+Missing values after joining: 0

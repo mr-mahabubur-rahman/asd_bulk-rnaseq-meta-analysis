@@ -1,0 +1,135 @@
+
+=== 1. cameraPR per dataset (correlation-aware; direction = in ASD) ===
+# A tibble: 10 × 6
+   set                                              GSE67528_Neuron
+   <chr>                                            <chr>          
+ 1 GOBP_CILIUM_ORGANIZATION                         Down p=0.031   
+ 2 GOBP_CILIUM_MOVEMENT                             Down p=0.0011  
+ 3 GOBP_AXONEME_ASSEMBLY                            Down p=2.5e-06 
+ 4 GOBP_MICROTUBULE_BASED_MOVEMENT                  Down p=0.034   
+ 5 GOBP_CILIUM_OR_FLAGELLUM_DEPENDENT_CELL_MOTILITY Down p=0.0038  
+ 6 REACTOME_EUKARYOTIC_TRANSLATION_INITIATION       Up p=1.8e-07   
+ 7 GOBP_RIBOSOME_BIOGENESIS                         Up p=0.00019   
+ 8 HALLMARK_MYC_TARGETS_V1                          Up p=2e-05     
+ 9 CURATED_MOTILE_CILIA                             Down p=4.1e-09 
+10 CURATED_PRIMARY_CILIA                            Down p=0.03    
+   GSE124308_both GSE142670_Neuron GSE67528_NPC GSE142670_NPC 
+   <chr>          <chr>            <chr>        <chr>         
+ 1 Down p=0.043   Down p=0.76      Up p=0.65    Down p=0.09   
+ 2 Down p=0.081   Down p=0.72      Up p=0.73    Down p=0.016  
+ 3 Down p=0.0026  Down p=0.88      Up p=0.94    Down p=5.8e-05
+ 4 Down p=0.18    Down p=0.8       Up p=0.71    Down p=0.21   
+ 5 Down p=0.18    Down p=0.66      Up p=0.83    Down p=0.024  
+ 6 Up p=0.008     Down p=0.048     Down p=0.004 Up p=6.4e-08  
+ 7 Up p=0.32      Down p=0.008     Up p=0.12    Up p=1.1e-05  
+ 8 Up p=0.2       Down p=0.0087    Up p=0.00075 Up p=5.3e-08  
+ 9 Down p=0.00058 Down p=0.73      Up p=0.93    Down p=5.5e-05
+10 Down p=0.0023  Down p=0.42      Up p=0.73    Down p=0.0034 
+(inter-gene correlation 0.05 shown; 0.01 results are in the CSV)
+Warning messages:
+1: In preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
+  There are ties in the preranked stats (0.01% of the list).
+The order of those tied genes will be arbitrary, which may produce unexpected results.
+2: In preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
+  There are ties in the preranked stats (0.06% of the list).
+The order of those tied genes will be arbitrary, which may produce unexpected results.
+3: In preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
+  There are ties in the preranked stats (0.01% of the list).
+The order of those tied genes will be arbitrary, which may produce unexpected results.
+
+=== 2a. Motile vs primary cilia (fgsea) ===
+# A tibble: 14 × 5
+   ranking          set                    size    NES        p
+   <chr>            <chr>                 <int>  <dbl>    <dbl>
+ 1 pooled_neuron    CURATED_MOTILE_CILIA     42 -2.86  2.24e-15
+ 2 pooled_neuron    CURATED_PRIMARY_CILIA    53 -2.27  6.03e- 7
+ 3 pooled_npc       CURATED_MOTILE_CILIA     36 -2.44  1.44e- 7
+ 4 pooled_npc       CURATED_PRIMARY_CILIA    53 -1.85  6.64e- 4
+ 5 GSE67528_Neuron  CURATED_MOTILE_CILIA     47 -3.12  4.34e-18
+ 6 GSE67528_Neuron  CURATED_PRIMARY_CILIA    53 -1.93  1.46e- 4
+ 7 GSE124308_both   CURATED_MOTILE_CILIA     46 -2.4   8.81e- 8
+ 8 GSE124308_both   CURATED_PRIMARY_CILIA    53 -2.22  1.67e- 6
+ 9 GSE142670_Neuron CURATED_MOTILE_CILIA     42 -0.697 9.33e- 1
+10 GSE142670_Neuron CURATED_PRIMARY_CILIA    53 -1.35  6.53e- 2
+11 GSE67528_NPC     CURATED_MOTILE_CILIA     48  1.04  3.98e- 1
+12 GSE67528_NPC     CURATED_PRIMARY_CILIA    53  0.82  8.01e- 1
+13 GSE142670_NPC    CURATED_MOTILE_CILIA     36 -2.62  2.15e- 9
+14 GSE142670_NPC    CURATED_PRIMARY_CILIA    53 -2.4   8.81e- 8
+
+=== 2b. Leading-edge genes of the GO cilia sets (pooled neurons) ===
+# A tibble: 3 × 2
+  class            n
+  <chr>        <int>
+1 motile          32
+2 other/shared   204
+3 primary         31
+Top 30 leading-edge genes (most negative pooled z = lowest in ASD):
+# A tibble: 30 × 3
+   Gene_Symbol pooled_z class       
+   <chr>          <dbl> <chr>       
+ 1 NEDD9          -3.77 other/shared
+ 2 PACRG          -3.62 motile      
+ 3 RIBC1          -3.37 motile      
+ 4 SPAG6          -3.36 motile      
+ 5 SPAG16         -3.26 motile      
+ 6 CC2D2A         -3.04 primary     
+ 7 CFAP46         -2.99 other/shared
+ 8 UBXN10         -2.95 other/shared
+ 9 CFAP276        -2.80 other/shared
+10 IFT88          -2.76 primary     
+11 DNAH5          -2.75 motile      
+12 DNAI1          -2.71 motile      
+13 DMD            -2.69 other/shared
+14 CATSPERB       -2.68 other/shared
+15 TEKT1          -2.65 motile      
+16 SPA17          -2.64 other/shared
+17 DRC1           -2.59 other/shared
+18 IQCD           -2.57 other/shared
+19 CFAP45         -2.56 motile      
+20 CFAP58         -2.53 other/shared
+21 ARMC3          -2.52 other/shared
+22 DNAAF3         -2.51 other/shared
+23 B9D1           -2.51 primary     
+24 EFHC2          -2.50 other/shared
+25 FUZ            -2.49 other/shared
+26 CFAP144        -2.49 other/shared
+27 CFAP90         -2.44 other/shared
+28 TEKT2          -2.44 motile      
+29 IFT122         -2.42 primary     
+30 RPGR           -2.42 other/shared
+
+=== 3. Ependymal / choroid-plexus markers (donor means; logCPM) ===
+mean_logCPM below ~0 = barely expressed (few or no such cells)
+# A tibble: 30 × 5
+   analysis         gene   mean_logCPM asd_minus_ctrl p_donor_t
+   <chr>            <chr>        <dbl>          <dbl>     <dbl>
+ 1 GSE124308_both   AQP1         2.1           0.44        0.7 
+ 2 GSE124308_both   CLIC6       -0.62         -0.25        0.72
+ 3 GSE124308_both   FOXJ1        2.6          -1           0.08
+ 4 GSE124308_both   KCNJ13       1.8           0.044       0.84
+ 5 GSE124308_both   S100B        4            -1           0.15
+ 6 GSE124308_both   TTR         -1.4          -0.95        0.55
+ 7 GSE142670_NPC    AQP1         0.083        -0.052       0.79
+ 8 GSE142670_NPC    CLIC6        0.98         -0.18        0.84
+ 9 GSE142670_NPC    FOXJ1        3            -0.73        0.37
+10 GSE142670_NPC    KCNJ13      -1.3          -0.44        0.38
+11 GSE142670_NPC    S100B        2.5           0.026       0.96
+12 GSE142670_NPC    TTR         -2.3           0.0023      1   
+13 GSE142670_Neuron AQP1         3.8          -0.83        0.22
+14 GSE142670_Neuron CLIC6        0.37          0.077       0.92
+15 GSE142670_Neuron FOXJ1        4.9          -0.29        0.63
+16 GSE142670_Neuron KCNJ13      -2.3           0.39        0.21
+17 GSE142670_Neuron S100B        4.5          -0.51        0.38
+18 GSE142670_Neuron TTR         -1.6           0.48        0.51
+19 GSE67528_NPC     AQP1         1.8          -0.24        0.49
+20 GSE67528_NPC     CLIC6        2.3           1.3         0.28
+21 GSE67528_NPC     FOXJ1        4.9          -0.23        0.45
+22 GSE67528_NPC     KCNJ13       0.13          0.56        0.53
+23 GSE67528_NPC     S100B        3             0.61        0.24
+24 GSE67528_NPC     TTR         -1.3           0.95        0.51
+25 GSE67528_Neuron  AQP1         3.8           0.16        0.86
+26 GSE67528_Neuron  CLIC6        1.9          -1           0.54
+27 GSE67528_Neuron  FOXJ1        4.2          -1.2         0.18
+28 GSE67528_Neuron  KCNJ13      -0.047        -0.94        0.44
+29 GSE67528_Neuron  S100B        3.7          -0.67        0.4 
+30 GSE67528_Neuron  TTR          4.3          -0.55        0.81

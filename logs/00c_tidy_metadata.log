@@ -1,0 +1,94 @@
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.2.1     ✔ readr     2.2.0
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.4     ✔ tibble    3.3.1
+✔ lubridate 1.9.5     ✔ tidyr     1.3.2
+✔ purrr     1.2.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+
+==================== GSE67528 ====================
+Donors per group:
+# A tibble: 2 × 2
+  condition     n
+  <fct>     <int>
+1 Control       6
+2 ASD           8
+Samples per stage x group:
+        
+         Control ASD
+  iPSC        11  17
+  NPC          9  21
+  Neuron       8  17
+Donors per stage x group:
+# A tibble: 3 × 3
+  stage  Control   ASD
+  <fct>    <int> <int>
+1 iPSC         6     8
+2 NPC          6     8
+3 Neuron       5     8
+Samples per donor x stage (clones/replicates):
+      
+       iPSC NPC Neuron
+  ABLE    3   3      3
+  ACAI    2   2      1
+  AERO    1   4      2
+  AHOY    3   3      3
+  APEX    2   1      1
+  AQUA    2   2      2
+  ARCH    2   4      3
+  AVID    2   2      2
+  CAPE    1   1      0
+  CENT    2   2      2
+  CHAP    2   2      2
+  CLAY    1   2      1
+  CLUE    2   1      1
+  COVE    3   1      2
+Age at biopsy by group (donor level):
+# A tibble: 2 × 5
+  condition     n mean_age   min   max
+  <fct>     <int>    <dbl> <dbl> <dbl>
+1 Control       6     10.8     6    17
+2 ASD           8     13.2     5    20
+
+==================== GSE124308 ====================
+Donors per group:
+# A tibble: 2 × 2
+  condition     n
+  <fct>     <int>
+1 Control       5
+2 ASD           6
+Samples per timepoint x group:
+      
+       Control ASD
+  d35        5   6
+  d135       5   6
+Reprogramming method by group (donor level):
+# A tibble: 2 × 3
+  condition Retrovirus `Sendai virus`
+  <fct>          <int>          <int>
+1 Control            2              3
+2 ASD                0              6
+iPSC source by group (donor level):
+# A tibble: 2 × 3
+  condition fibroblast `peripheral blood mononuclear cells`
+  <fct>          <int>                                <int>
+1 Control            3                                    2
+2 ASD                0                                    6
+Donor table:
+# A tibble: 11 × 4
+   donor condition ipsc_source                        reprogramming
+   <chr> <fct>     <chr>                              <chr>        
+ 1 101   Control   fibroblast                         Retrovirus   
+ 2 102   Control   fibroblast                         Retrovirus   
+ 3 1021  Control   fibroblast                         Sendai virus 
+ 4 114   Control   peripheral blood mononuclear cells Sendai virus 
+ 5 574   Control   peripheral blood mononuclear cells Sendai virus 
+ 6 110   ASD       peripheral blood mononuclear cells Sendai virus 
+ 7 134   ASD       peripheral blood mononuclear cells Sendai virus 
+ 8 691   ASD       peripheral blood mononuclear cells Sendai virus 
+ 9 709   ASD       peripheral blood mononuclear cells Sendai virus 
+10 725   ASD       peripheral blood mononuclear cells Sendai virus 
+11 732   ASD       peripheral blood mononuclear cells Sendai virus 

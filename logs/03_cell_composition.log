@@ -1,0 +1,119 @@
+
+=== Composition: ASD vs control (donor means; diff in SD units) ===
+# A tibble: 37 × 7
+   analysis         score         n_asd n_ctrl diff_asd_minus_ctrl    t_p
+   <chr>            <chr>         <int>  <int>               <dbl>  <dbl>
+ 1 GSE124308_both   non_neural        6      5              -0.54  0.13  
+ 2 GSE124308_both   glia              6      5              -0.37  0.22  
+ 3 GSE124308_both   neuron            6      5               0.34  0.26  
+ 4 GSE124308_both   glutamatergic     6      5               0.18  0.6   
+ 5 GSE124308_both   gabaergic         6      5              -0.16  0.68  
+ 6 GSE124308_both   progenitor        6      5              -0.086 0.81  
+ 7 GSE124308_both   pluripotency      6      5               0.018 0.92  
+ 8 GSE124308_both   proliferation     6      5               0.015 0.97  
+ 9 GSE142670_NPC    proliferation     6      6              -0.2   0.44  
+10 GSE142670_NPC    non_neural        6      6               0.087 0.69  
+11 GSE142670_NPC    progenitor        6      6              -0.16  0.71  
+12 GSE142670_NPC    glia              6      6               0.11  0.74  
+13 GSE142670_NPC    pluripotency      6      6               0.042 0.85  
+14 GSE142670_NPC    neuron            6      6              -0.011 0.98  
+15 GSE142670_Neuron proliferation     6      4               0.53  0.35  
+16 GSE142670_Neuron gabaergic         6      4               0.41  0.39  
+17 GSE142670_Neuron pluripotency      6      4              -0.19  0.46  
+18 GSE142670_Neuron progenitor        6      4              -0.22  0.61  
+19 GSE142670_Neuron glia              6      4              -0.18  0.63  
+20 GSE142670_Neuron glutamatergic     6      4               0.13  0.64  
+21 GSE142670_Neuron non_neural        6      4               0.082 0.87  
+22 GSE142670_Neuron neuron            6      4               0.043 0.93  
+23 GSE67528_NPC     glutamatergic     8      6               0.24  0.43  
+24 GSE67528_NPC     proliferation     8      6               0.44  0.49  
+25 GSE67528_NPC     glia              8      6               0.26  0.53  
+26 GSE67528_NPC     neuron            8      6              -0.26  0.53  
+27 GSE67528_NPC     pluripotency      8      6               0.23  0.54  
+28 GSE67528_NPC     non_neural        8      6              -0.22  0.56  
+29 GSE67528_NPC     progenitor        8      6              -0.014 0.95  
+30 GSE67528_Neuron  non_neural        8      5               0.92  0.0076
+31 GSE67528_Neuron  glutamatergic     8      5              -0.32  0.24  
+32 GSE67528_Neuron  glia              8      5              -0.48  0.26  
+33 GSE67528_Neuron  proliferation     8      5              -0.29  0.32  
+34 GSE67528_Neuron  gabaergic         8      5               0.28  0.59  
+35 GSE67528_Neuron  pluripotency      8      5               0.17  0.64  
+36 GSE67528_Neuron  progenitor        8      5              -0.041 0.89  
+37 GSE67528_Neuron  neuron            8      5              -0.046 0.92  
+   wilcox_p
+      <dbl>
+ 1     0.12
+ 2     0.32
+ 3     0.32
+ 4     0.78
+ 5     0.52
+ 6     0.93
+ 7     0.93
+ 8     0.93
+ 9     0.81
+10     0.94
+11     0.58
+12     0.81
+13     0.47
+14     0.94
+15     0.59
+16     0.46
+17     0.59
+18     0.59
+19     1   
+20     0.46
+21     0.92
+22     0.59
+23     0.48
+24     1   
+25     0.95
+26     0.85
+27     0.4 
+28     0.4 
+29     0.75
+30     0.01
+31     0.27
+32     0.42
+33     0.34
+34     0.51
+35     0.61
+36     0.83
+37     0.61
+
+--- GSE67528_Neuron | ~condition + (1 | donor) + neuron
+Genes at FDR < 0.05: 0
+
+--- GSE124308_both | ~condition + timepoint + (1 | donor) + neuron
+Genes at FDR < 0.05: 0
+
+--- GSE142670_Neuron | ~condition + (1 | donor) + neuron
+Genes at FDR < 0.05: 0
+
+--- GSE67528_NPC | ~condition + (1 | donor) + neuron
+Genes at FDR < 0.05: 0
+
+--- GSE142670_NPC | ~condition + (1 | donor) + neuron
+Genes at FDR < 0.05: 1
+Warning message:
+In dream(vobj, form, meta, BPPARAM = param) : Model failed for 1 responses.
+  See errors with attr(., 'errors')
+
+=== Neurons: leave-one-cohort-out direction agreement (top 500) ===
+# A tibble: 6 × 5
+  version         held_out         genes share binom_p_two_sided
+  <chr>           <chr>            <int> <dbl>             <dbl>
+1 unadjusted      GSE67528_Neuron    498 0.629          1.06e- 8
+2 unadjusted      GSE124308_both     465 0.615          7.96e- 7
+3 unadjusted      GSE142670_Neuron   452 0.613          1.84e- 6
+4 neuron-adjusted GSE67528_Neuron    499 0.687          3.56e-17
+5 neuron-adjusted GSE124308_both     473 0.632          9.81e- 9
+6 neuron-adjusted GSE142670_Neuron   451 0.579          9.59e- 4
+
+=== NPC: direction agreement between the two cohorts (top 500) ===
+# A tibble: 4 × 5
+  version         held_out      genes share binom_p_two_sided
+  <chr>           <chr>         <int> <dbl>             <dbl>
+1 unadjusted      GSE67528_NPC    423 0.626       0.000000221
+2 unadjusted      GSE142670_NPC   360 0.556       0.0397     
+3 neuron-adjusted GSE67528_NPC    446 0.626       0.000000127
+4 neuron-adjusted GSE142670_NPC   357 0.566       0.0148     

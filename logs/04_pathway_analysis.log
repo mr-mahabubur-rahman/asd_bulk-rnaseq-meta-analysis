@@ -1,0 +1,321 @@
+Downloading gene sets (first use only, may take a few minutes)...
+Warning message:
+In file.rename(tmp_path, zip_path) :
+  cannot rename file '/tmp/RtmptN5jcl/filee6cd4fec314f.zip' to '/home/mahabub/.cache/R/msigdbr/msigdb.2026.1.zip', reason 'Invalid cross-device link'
+Gene sets loaded: Hallmark = 50, GO_BP = 7538, Reactome = 1839
+
+==================== NEURON ====================
+Ranked genes: 14521
+Pathways at FDR < 0.05: GO_BP = 196, Hallmark = 22, Reactome = 118
+
+Top pathways: pooled NES, how many datasets agree, and neuron-adjusted NES
+# A tibble: 25 × 9
+   collection
+   <chr>     
+ 1 Reactome  
+ 2 Reactome  
+ 3 GO_BP     
+ 4 GO_BP     
+ 5 Reactome  
+ 6 Reactome  
+ 7 GO_BP     
+ 8 Reactome  
+ 9 Reactome  
+10 Reactome  
+11 GO_BP     
+12 Reactome  
+13 Reactome  
+14 GO_BP     
+15 Reactome  
+16 GO_BP     
+17 GO_BP     
+18 Hallmark  
+19 Reactome  
+20 Reactome  
+21 GO_BP     
+22 GO_BP     
+23 Reactome  
+24 Reactome  
+25 Reactome  
+   pathway                                                                      
+   <chr>                                                                        
+ 1 REACTOME_EUKARYOTIC_TRANSLATION_INITIATION                                   
+ 2 REACTOME_RRNA_PROCESSING                                                     
+ 3 GOBP_CILIUM_ORGANIZATION                                                     
+ 4 GOBP_CILIUM_MOVEMENT                                                         
+ 5 REACTOME_NONSENSE_MEDIATED_DECAY_NMD                                         
+ 6 REACTOME_EUKARYOTIC_TRANSLATION_ELONGATION                                   
+ 7 GOBP_CYTOPLASMIC_TRANSLATION                                                 
+ 8 REACTOME_RESPONSE_OF_EIF2AK4_GCN2_TO_AMINO_ACID_DEFICIENCY                   
+ 9 REACTOME_RIBOSOME_ASSOCIATED_QUALITY_CONTROL                                 
+10 REACTOME_SELENOAMINO_ACID_METABOLISM                                         
+11 GOBP_MICROTUBULE_BASED_MOVEMENT                                              
+12 REACTOME_INFLUENZA_INFECTION                                                 
+13 REACTOME_INFLUENZA_VIRAL_RNA_TRANSCRIPTION_AND_REPLICATION                   
+14 GOBP_RIBONUCLEOPROTEIN_COMPLEX_BIOGENESIS                                    
+15 REACTOME_SRP_DEPENDENT_COTRANSLATIONAL_PROTEIN_TARGETING_TO_MEMBRANE         
+16 GOBP_AXONEME_ASSEMBLY                                                        
+17 GOBP_CILIUM_OR_FLAGELLUM_DEPENDENT_CELL_MOTILITY                             
+18 HALLMARK_MYC_TARGETS_V1                                                      
+19 REACTOME_TRANSLATION                                                         
+20 REACTOME_REGULATION_OF_EXPRESSION_OF_SLITS_AND_ROBOS                         
+21 GOBP_RIBOSOME_BIOGENESIS                                                     
+22 GOBP_MICROTUBULE_BUNDLE_FORMATION                                            
+23 REACTOME_CELLULAR_RESPONSE_TO_STARVATION                                     
+24 REACTOME_ACTIVATION_OF_THE_MRNA_UPON_BINDING_OF_THE_CAP_BINDING_COMPLEX_AND_…
+25 REACTOME_SIGNALING_BY_ROBO_RECEPTORS                                         
+   NES_pooled padj_pooled  size datasets_same_sign n_datasets NES_adjNeuron
+        <dbl>       <dbl> <int>              <int>      <int>         <dbl>
+ 1       3.49    1.01e-27   116                  2          3          3.67
+ 2       3.08    9.17e-25   202                  2          3          3.36
+ 3      -2.47    1.48e-23   426                  3          3         -2.47
+ 4      -2.82    4.81e-23   208                  3          3         -2.9 
+ 5       3.3     5.41e-23   110                  2          3          3.49
+ 6       3.34    1.72e-21    89                  2          3          3.49
+ 7       3.03    2.18e-21   164                  2          3          3.33
+ 8       3.3     2.33e-21    98                  2          3          3.49
+ 9       3.09    2.52e-21   140                  2          3          3.44
+10       3.19    6.20e-21   112                  2          3          3.5 
+11      -2.37    1.01e-20   435                  3          3         -2.47
+12       2.99    5.01e-20   149                  2          3          3.28
+13       3.03    6.53e-20   131                  2          3          3.31
+14       2.34    1.51e-19   476                  1          2          2.89
+15       3.12    1.75e-18   109                  2          3          3.41
+16      -3       7.84e-18    85                  3          3         -3.08
+17      -2.66    8.83e-17   176                  3          3         -2.77
+18       2.64    2.49e-16   199                  2          3          2.97
+19       2.34    3.89e-16   361                  2          3          2.9 
+20       2.74    6.71e-15   150                  2          3          3.09
+21       2.35    1.03e-14   315                  2          3          2.89
+22      -2.76    1.39e-14   113                  2          3         -2.86
+23       2.72    2.08e-14   146                  2          3          3.03
+24       3.04    1.57e-13    58                  2          3          3.23
+25       2.42    7.02e-12   194                  2          3          2.85
+   pval_adjNeuron
+            <dbl>
+ 1       1.99e-38
+ 2       6.70e-38
+ 3       3.78e-26
+ 4       5.09e-29
+ 5       1.49e-30
+ 6       1.77e-29
+ 7       6.20e-33
+ 8       4.6 e-31
+ 9       2.20e-33
+10       1.03e-31
+11       1.89e-26
+12       1.62e-30
+13       3.66e-28
+14       3.30e-40
+15       3.77e-28
+16       2.29e-23
+17       1.54e-22
+18       4.02e-26
+19       1.84e-33
+20       3.32e-25
+21       4.24e-30
+22       5.22e-20
+23       7.49e-23
+24       1.6 e-19
+25       6.03e-23
+
+==================== NPC ====================
+Ranked genes: 14103
+Pathways at FDR < 0.05: GO_BP = 494, Hallmark = 24, Reactome = 454
+
+Top pathways: pooled NES, how many datasets agree, and neuron-adjusted NES
+# A tibble: 25 × 9
+   collection pathway                                                 
+   <chr>      <chr>                                                   
+ 1 Hallmark   HALLMARK_MYC_TARGETS_V1                                 
+ 2 GO_BP      GOBP_RIBONUCLEOPROTEIN_COMPLEX_BIOGENESIS               
+ 3 GO_BP      GOBP_RIBOSOME_BIOGENESIS                                
+ 4 Reactome   REACTOME_TRANSLATION                                    
+ 5 Reactome   REACTOME_CELL_CYCLE_MITOTIC                             
+ 6 GO_BP      GOBP_RRNA_METABOLIC_PROCESS                             
+ 7 GO_BP      GOBP_RRNA_PROCESSING                                    
+ 8 Reactome   REACTOME_PROCESSING_OF_CAPPED_INTRON_CONTAINING_PRE_MRNA
+ 9 Hallmark   HALLMARK_E2F_TARGETS                                    
+10 Reactome   REACTOME_MITOTIC_METAPHASE_AND_ANAPHASE                 
+11 Reactome   REACTOME_CELL_CYCLE_CHECKPOINTS                         
+12 Hallmark   HALLMARK_MTORC1_SIGNALING                               
+13 Reactome   REACTOME_HIV_INFECTION                                  
+14 Reactome   REACTOME_DENGUE_VIRUS_INFECTION                         
+15 Reactome   REACTOME_MRNA_SPLICING                                  
+16 Reactome   REACTOME_M_PHASE                                        
+17 Reactome   REACTOME_RRNA_PROCESSING                                
+18 Hallmark   HALLMARK_MYC_TARGETS_V2                                 
+19 Reactome   REACTOME_SYNTHESIS_OF_DNA                               
+20 Reactome   REACTOME_SEPARATION_OF_SISTER_CHROMATIDS                
+21 Reactome   REACTOME_DNA_REPLICATION                                
+22 Reactome   REACTOME_S_PHASE                                        
+23 Reactome   REACTOME_MRNA_3_END_PROCESSING                          
+24 Reactome   REACTOME_HOST_INTERACTIONS_OF_HIV_FACTORS               
+25 Hallmark   HALLMARK_G2M_CHECKPOINT                                 
+   NES_pooled padj_pooled  size datasets_same_sign n_datasets NES_adjNeuron
+        <dbl>       <dbl> <int>              <int>      <int>         <dbl>
+ 1       3.54    4.46e-49   199                  2          2          3.61
+ 2       2.99    4.67e-45   477                  2          2          3.07
+ 3       3.03    4.10e-35   315                  2          2          3.12
+ 4       2.8     4.42e-30   361                  1          2          2.87
+ 5       2.59    5.06e-28   492                  1          1          2.48
+ 6       2.88    6.41e-28   275                  2          2          2.98
+ 7       2.89    1.5 e-24   226                  2          2          3   
+ 8       2.78    4.49e-24   287                  2          2          2.79
+ 9       2.86    4.88e-24   199                  2          2          2.8 
+10       2.9     6.45e-24   212                  2          2          2.91
+11       2.76    9.56e-24   262                  2          2          2.73
+12       2.87    6.69e-23   192                  2          2          2.85
+13       2.82    1.06e-20   202                  2          2          2.81
+14       2.57    1.69e-20   327                  2          2          2.5 
+15       2.75    2.13e-20   209                  2          2          2.8 
+16       2.51    6.19e-20   347                  2          2          2.47
+17       2.76    1.03e-19   202                  2          2          2.88
+18       3.11    3.32e-19    57                  2          2          3.26
+19       2.95    3.43e-19   107                  2          2          2.93
+20       2.78    8.30e-19   168                  2          2          2.84
+21       2.83    1.74e-18   139                  2          2          2.81
+22       2.77    9.44e-18   149                  2          2          2.73
+23       2.73    5.33e-17   149                  2          2          2.7 
+24       2.86    7.86e-17   108                  2          2          2.96
+25       2.55    2.29e-16   197                  2          2          2.5 
+   pval_adjNeuron
+            <dbl>
+ 1       9.71e-52
+ 2       1.96e-51
+ 3       4.10e-41
+ 4       5.20e-34
+ 5       9.25e-27
+ 6       8.04e-33
+ 7       5.17e-30
+ 8       2.02e-27
+ 9       1.15e-22
+10       1.55e-26
+11       2.95e-24
+12       8.39e-24
+13       5.68e-23
+14       1.77e-20
+15       4.18e-24
+16       1.66e-20
+17       6.11e-25
+18       5.93e-25
+19       8.30e-20
+20       4.43e-21
+21       2.09e-18
+22       1.57e-18
+23       7.16e-18
+24       5.20e-20
+25       2.17e-16
+Warning messages:
+1: In preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
+  There are ties in the preranked stats (0.01% of the list).
+The order of those tied genes will be arbitrary, which may produce unexpected results.
+2: In preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
+  There are ties in the preranked stats (0.06% of the list).
+The order of those tied genes will be arbitrary, which may produce unexpected results.
+3: In preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
+  There are ties in the preranked stats (0.01% of the list).
+The order of those tied genes will be arbitrary, which may produce unexpected results.
+Warning messages:
+1: In preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
+  There are ties in the preranked stats (0.01% of the list).
+The order of those tied genes will be arbitrary, which may produce unexpected results.
+2: In preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
+  There are ties in the preranked stats (0.06% of the list).
+The order of those tied genes will be arbitrary, which may produce unexpected results.
+3: In preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
+  There are ties in the preranked stats (0.01% of the list).
+The order of those tied genes will be arbitrary, which may produce unexpected results.
+
+=== Pre-specified interferon / MHC class I test (BH within the family of 4 sets) ===
+# A tibble: 28 × 7
+   stage  ranking         
+   <chr>  <chr>           
+ 1 neuron pooled          
+ 2 neuron pooled          
+ 3 neuron pooled          
+ 4 neuron pooled          
+ 5 neuron GSE67528_Neuron 
+ 6 neuron GSE67528_Neuron 
+ 7 neuron GSE67528_Neuron 
+ 8 neuron GSE67528_Neuron 
+ 9 neuron GSE124308_both  
+10 neuron GSE124308_both  
+11 neuron GSE124308_both  
+12 neuron GSE124308_both  
+13 neuron GSE142670_Neuron
+14 neuron GSE142670_Neuron
+15 neuron GSE142670_Neuron
+16 neuron GSE142670_Neuron
+17 npc    pooled          
+18 npc    pooled          
+19 npc    pooled          
+20 npc    pooled          
+21 npc    GSE67528_NPC    
+22 npc    GSE67528_NPC    
+23 npc    GSE67528_NPC    
+24 npc    GSE67528_NPC    
+25 npc    GSE142670_NPC   
+26 npc    GSE142670_NPC   
+27 npc    GSE142670_NPC   
+28 npc    GSE142670_NPC   
+   pathway                                                                    
+   <chr>                                                                      
+ 1 GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION_OF_PEPTIDE_ANTIGEN_VIA_MHC_CLASS_I
+ 2 HALLMARK_INTERFERON_ALPHA_RESPONSE                                         
+ 3 HALLMARK_INTERFERON_GAMMA_RESPONSE                                         
+ 4 REACTOME_CLASS_I_MHC_MEDIATED_ANTIGEN_PROCESSING_PRESENTATION              
+ 5 GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION_OF_PEPTIDE_ANTIGEN_VIA_MHC_CLASS_I
+ 6 HALLMARK_INTERFERON_ALPHA_RESPONSE                                         
+ 7 HALLMARK_INTERFERON_GAMMA_RESPONSE                                         
+ 8 REACTOME_CLASS_I_MHC_MEDIATED_ANTIGEN_PROCESSING_PRESENTATION              
+ 9 GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION_OF_PEPTIDE_ANTIGEN_VIA_MHC_CLASS_I
+10 HALLMARK_INTERFERON_ALPHA_RESPONSE                                         
+11 HALLMARK_INTERFERON_GAMMA_RESPONSE                                         
+12 REACTOME_CLASS_I_MHC_MEDIATED_ANTIGEN_PROCESSING_PRESENTATION              
+13 GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION_OF_PEPTIDE_ANTIGEN_VIA_MHC_CLASS_I
+14 HALLMARK_INTERFERON_ALPHA_RESPONSE                                         
+15 HALLMARK_INTERFERON_GAMMA_RESPONSE                                         
+16 REACTOME_CLASS_I_MHC_MEDIATED_ANTIGEN_PROCESSING_PRESENTATION              
+17 GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION_OF_PEPTIDE_ANTIGEN_VIA_MHC_CLASS_I
+18 HALLMARK_INTERFERON_ALPHA_RESPONSE                                         
+19 HALLMARK_INTERFERON_GAMMA_RESPONSE                                         
+20 REACTOME_CLASS_I_MHC_MEDIATED_ANTIGEN_PROCESSING_PRESENTATION              
+21 GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION_OF_PEPTIDE_ANTIGEN_VIA_MHC_CLASS_I
+22 HALLMARK_INTERFERON_ALPHA_RESPONSE                                         
+23 HALLMARK_INTERFERON_GAMMA_RESPONSE                                         
+24 REACTOME_CLASS_I_MHC_MEDIATED_ANTIGEN_PROCESSING_PRESENTATION              
+25 GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION_OF_PEPTIDE_ANTIGEN_VIA_MHC_CLASS_I
+26 HALLMARK_INTERFERON_ALPHA_RESPONSE                                         
+27 HALLMARK_INTERFERON_GAMMA_RESPONSE                                         
+28 REACTOME_CLASS_I_MHC_MEDIATED_ANTIGEN_PROCESSING_PRESENTATION              
+    size    NES     pval padj_within_family
+   <int>  <dbl>    <dbl>              <dbl>
+ 1    27 -1.72  5.93e- 3           7.91e- 3
+ 2    81 -2.1   1.82e- 6           7.29e- 6
+ 3   142 -1.75  2.93e- 4           5.87e- 4
+ 4   324  0.904 8.08e- 1           8.08e- 1
+ 5    33 -0.671 9.44e- 1           9.44e- 1
+ 6    89 -0.976 4.98e- 1           7.6 e- 1
+ 7   176  0.966 5.7 e- 1           7.6 e- 1
+ 8   351  1.93  1.38e- 9           5.53e- 9
+ 9    31 -1.7   5.16e- 3           5.16e- 3
+10    93 -2.63  3.75e-13           1.5 e-12
+11   175 -2.28  5.75e-11           1.15e-10
+12   343 -1.55  1.8 e- 4           2.4 e- 4
+13    27 -0.84  7.26e- 1           7.99e- 1
+14    84 -0.919 6.63e- 1           7.99e- 1
+15   153 -0.865 7.99e- 1           7.99e- 1
+16   329 -1.31  2.21e- 2           8.84e- 2
+17    21 -0.749 8.15e- 1           8.15e- 1
+18    70 -1.03  3.85e- 1           5.13e- 1
+19   133  1.09  2.82e- 1           5.13e- 1
+20   324  1.88  3.32e- 8           1.33e- 7
+21    33 -1.12  2.8 e- 1           2.8 e- 1
+22    86 -1.48  2.32e- 2           9.27e- 2
+23   171 -1.12  2.13e- 1           2.8 e- 1
+24   350  1.13  1.24e- 1           2.49e- 1
+25    21  1.41  8.27e- 2           1.1 e- 1
+26    70  0.985 4.8 e- 1           4.8 e- 1
+27   134  1.52  4.78e- 3           9.57e- 3
+28   324  2.2   3.42e-14           1.37e-13

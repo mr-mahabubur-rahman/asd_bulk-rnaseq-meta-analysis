@@ -1,0 +1,135 @@
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.2.1     ✔ readr     2.2.0
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.4     ✔ tibble    3.3.1
+✔ lubridate 1.9.5     ✔ tidyr     1.3.2
+✔ purrr     1.2.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+
+=== 1. Share of genes with a real ASD effect (pi1) ===
+# A tibble: 7 × 5
+  analysis                 genes    pi1 p_lt_0.01 expected_0.01
+  <chr>                    <int>  <dbl>     <int>         <dbl>
+1 GSE124308_both_adjSource 17657 0.357        772           177
+2 GSE124308_both           17658 0.241        381           177
+3 GSE124308_d135           17985 0.340        867           180
+4 GSE124308_d35            17679 0.298        275           177
+5 GSE67528_iPSC            18077 0            101           181
+6 GSE67528_Neuron          18832 0.111        183           188
+7 GSE67528_NPC             18362 0.0237       115           184
+
+=== 2. Direction agreement between datasets (chance = 50%) ===
+# A tibble: 12 × 8
+   discovery       replication     top_n same_direction share     binom_p
+   <chr>           <chr>           <dbl>          <int> <dbl>       <dbl>
+ 1 GSE67528_Neuron GSE124308_both    100             43 0.43  0.933      
+ 2 GSE67528_Neuron GSE124308_both    250            123 0.492 0.624      
+ 3 GSE67528_Neuron GSE124308_both    500            266 0.532 0.0828     
+ 4 GSE124308_both  GSE67528_Neuron   100             62 0.62  0.0105     
+ 5 GSE124308_both  GSE67528_Neuron   250            154 0.616 0.000147   
+ 6 GSE124308_both  GSE67528_Neuron   500            308 0.616 0.000000120
+ 7 GSE67528_NPC    GSE124308_d35     100             58 0.58  0.0666     
+ 8 GSE67528_NPC    GSE124308_d35     250            129 0.516 0.329      
+ 9 GSE67528_NPC    GSE124308_d35     500            262 0.524 0.152      
+10 GSE124308_d35   GSE67528_NPC      100             50 0.5   0.540      
+11 GSE124308_d35   GSE67528_NPC      250            128 0.512 0.376      
+12 GSE124308_d35   GSE67528_NPC      500            233 0.466 0.941      
+   shared_genes spearman_t
+          <int>      <dbl>
+ 1        17019     0.0794
+ 2        17019     0.0794
+ 3        17019     0.0794
+ 4        17019     0.0794
+ 5        17019     0.0794
+ 6        17019     0.0794
+ 7        16893    -0.135 
+ 8        16893    -0.135 
+ 9        16893    -0.135 
+10        16893    -0.135 
+11        16893    -0.135 
+12        16893    -0.135 
+`geom_smooth()` using formula = 'y ~ x'
+
+=== 3. Source-adjusted hits in every analysis ===
+# A tibble: 11 × 16
+   Gene_ID         Gene_Symbol log2FC_GSE124308_both_adjSource
+   <chr>           <chr>                                 <dbl>
+ 1 ENSG00000123496 IL13RA2                               -2.98
+ 2 ENSG00000132109 TRIM21                                -1.36
+ 3 ENSG00000146411 SLC2A12                               -1.96
+ 4 ENSG00000164171 ITGA2                                 -2.49
+ 5 ENSG00000168497 CAVIN2                                -4.53
+ 6 ENSG00000186529 CYP4F3                                 1.36
+ 7 ENSG00000230133 LINC01721                              1.52
+ 8 ENSG00000245556 SCAMP1-AS1                            -0.84
+ 9 ENSG00000251323 LINC02728                              1.2 
+10 ENSG00000276368 H2AC14                                -4.7 
+11 ENSG00000278588 H2BC10                                -3.13
+   log2FC_GSE124308_both log2FC_GSE124308_d135 log2FC_GSE124308_d35
+                   <dbl>                 <dbl>                <dbl>
+ 1                 -1.51                 -1.72                -1.1 
+ 2                 -0.63                 -0.74                -0.39
+ 3                 -1.43                 -1.94                -0.71
+ 4                 -1.46                 -1.73                -1   
+ 5                 -2.75                 -2.94                NA   
+ 6                  0.59                  0.43                 0.75
+ 7                  0.7                   0.56                 0.91
+ 8                 -0.31                 -0.27                -0.28
+ 9                  0.61                  0.5                  0.72
+10                 -3.32                 -3.7                 -3.12
+11                 -1.87                 -2.09                -1.67
+   log2FC_GSE67528_iPSC log2FC_GSE67528_Neuron log2FC_GSE67528_NPC
+                  <dbl>                  <dbl>               <dbl>
+ 1                NA                     -0.72               -0.17
+ 2                 0.15                  -0.26                0.09
+ 3                -0.09                  -0.79               -0.29
+ 4                 0.02                  -0.2                 0.9 
+ 5                NA                     -0.94               -0.38
+ 6                 0.1                    0.31               -0.36
+ 7                NA                     NA                  -0.43
+ 8                -0.06                  -0.27               -0.19
+ 9                 0.04                  -0.04                0.33
+10                -0.03                  NA                   0.42
+11                NA                     NA                  NA   
+   pvalue_GSE124308_both_adjSource pvalue_GSE124308_both pvalue_GSE124308_d135
+                             <dbl>                 <dbl>                 <dbl>
+ 1                       0.0000072               0.042                 0.058  
+ 2                       0.0000048               0.059                 0.046  
+ 3                       0.000016                0.00056               0.00023
+ 4                       0.000014                0.015                 0.038  
+ 5                       0.0000054               0.01                  0.0086 
+ 6                       0.000011                0.067                 0.16   
+ 7                       0.000019                0.03                  0.19   
+ 8                       0.0000083               0.23                  0.35   
+ 9                       0.0000076               0.029                 0.075  
+10                       0.000015                0.0014                0.019  
+11                       0.000012                0.0098                0.059  
+   pvalue_GSE124308_d35 pvalue_GSE67528_iPSC pvalue_GSE67528_Neuron
+                  <dbl>                <dbl>                  <dbl>
+ 1               0.15                  NA                      0.18
+ 2               0.28                   0.11                   0.34
+ 3               0.063                  0.47                   0.16
+ 4               0.028                  0.92                   0.63
+ 5              NA                     NA                      0.25
+ 6               0.069                  0.74                   0.36
+ 7               0.026                 NA                     NA   
+ 8               0.25                   0.65                   0.25
+ 9               0.043                  0.85                   0.88
+10               0.0027                 0.95                  NA   
+11               0.011                 NA                     NA   
+   pvalue_GSE67528_NPC
+                 <dbl>
+ 1               0.78 
+ 2               0.58 
+ 3               0.39 
+ 4               0.021
+ 5               0.59 
+ 6               0.3  
+ 7               0.51 
+ 8               0.4  
+ 9               0.2  
+10               0.23 
+11              NA    

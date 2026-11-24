@@ -298,6 +298,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-munsell-0.5.1-r45hc72bb7e_2.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-nortest-1.0_4-r45hc72bb7e_1007.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-numderiv-2016.8_1.1-r45hc72bb7e_7.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/r-patchwork-1.3.2-r45hc72bb7e_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-pbapply-1.7_4-r45hc72bb7e_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-pbkrtest-0.5.5-r45hc72bb7e_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-pillar-1.11.1-r45hc72bb7e_0.conda
@@ -4670,6 +4671,18 @@ packages:
   run_exports: {}
   size: 128918
   timestamp: 1757459948489
+- conda: https://conda.anaconda.org/conda-forge/noarch/r-patchwork-1.3.2-r45hc72bb7e_1.conda
+  sha256: a293119dea80dd983e9ba70af286f4d3c96d8c8223ff9d261078a1ce5f7534f5
+  md5: 18c39db2636c08991a21d2e1ec0f5ee8
+  depends:
+  - r-base >=4.5,<4.6.0a0
+  - r-ggplot2 >=3.0.0
+  - r-gtable
+  license: MIT
+  license_family: MIT
+  run_exports: {}
+  size: 3304812
+  timestamp: 1757516903732
 - conda: https://conda.anaconda.org/conda-forge/noarch/r-pbapply-1.7_4-r45hc72bb7e_1.conda
   sha256: 332cf4f7dd23ae24c03670020a9c408e75dff350e34a5f26f6f2f3e537a50b64
   md5: f5091bef934c9042338c91e98ed72bca

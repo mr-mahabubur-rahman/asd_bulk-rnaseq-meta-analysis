@@ -1,0 +1,303 @@
+Loading required package: Biobase
+Loading required package: BiocGenerics
+Loading required package: generics
+
+Attaching package: ‘generics’
+
+The following objects are masked from ‘package:base’:
+
+    as.difftime, as.factor, as.ordered, intersect, is.element, setdiff,
+    setequal, union
+
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, is.unsorted, lapply, Map, mapply, match, mget,
+    order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rownames, sapply, saveRDS, table, tapply, unique,
+    unsplit, which.max, which.min
+
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Setting options('download.file.method.GEOquery'='auto')
+Setting options('GEOquery.inmemory.gpl'=FALSE)
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.2.1     ✔ readr     2.2.0
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.4     ✔ tibble    3.3.1
+✔ lubridate 1.9.5     ✔ tidyr     1.3.2
+✔ purrr     1.2.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::combine()    masks Biobase::combine(), BiocGenerics::combine()
+✖ dplyr::filter()     masks stats::filter()
+✖ dplyr::lag()        masks stats::lag()
+✖ ggplot2::Position() masks BiocGenerics::Position(), base::Position()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+
+==================== GSE67528 ====================
+Found 1 file(s)
+GSE67528_series_matrix.txt.gz
+Samples in GEO: 83 | in count matrix: 83 | overlap: 83
+
+--- title (83 distinct values; first 10) ---
+ [1] "Neuron_ASD_ABLE_3_8"  "Neuron_ASD_ABLE_3_6"  "Neuron_ASD_ABLE_3_12"
+ [4] "Neuron_ASD_ACAI_1_1"  "Neuron_ASD_AERO_3_6"  "Neuron_ASD_AERO_3_7" 
+ [7] "Neuron_ASD_AHOY_5_13" "Neuron_ASD_AHOY_5_4"  "Neuron_ASD_AHOY_5_19"
+[10] "Neuron_ASD_APEX_5_4" 
+
+--- source_name_ch1 ---
+vals
+iPSC-derived neural progenitors            iPSC-derived neurons 
+                             30                              25 
+                          iPSCs 
+                             28 
+
+--- ados total score at biopsy:ch1 ---
+vals
+13 (Fluent Speech - Child/Adolescent)   13 (Fluent Speech -Chld/Adolescent) 
+                                    5                                     6 
+16 (Fluent Speech - Child/Adolescent)          16 (Pre-verbal/Single Words) 
+                                    6                                     9 
+18 (Fluent Speech - Adolescent/Adult)          18 (Pre-verbal/Single Words) 
+                                    4                                     9 
+20 (Fluent Speech - Adolescent/Adult) 20 (Fluent Speech - Child/Adolescent) 
+                                    9                                     7 
+                                  n/a 
+                                   28 
+
+--- age at biopsy:ch1 ---
+vals
+16 17 18 20  5  6  7  8  9 
+17 10  5  9  9  6  9 12  6 
+
+--- cell type:ch1 ---
+vals
+iPSC-derived neural progenitors            iPSC-derived neurons 
+                             30                              25 
+                          iPSCs 
+                             28 
+
+--- gender:ch1 ---
+vals
+Male 
+  83 
+
+--- group:ch1 ---
+vals
+    ASD CONTROL 
+     55      28 
+
+--- iPSc clone:ch1 (33 distinct values; first 10) ---
+ [1] "ABLE_3_8"  "ABLE_3_6"  "ABLE_3_12" "ACAI_1_1"  "AERO_3_6"  "AERO_3_7" 
+ [7] "AHOY_5_13" "AHOY_5_4"  "AHOY_5_19" "APEX_5_4" 
+
+--- patient id:ch1 ---
+vals
+ABLE ACAI AERO AHOY APEX AQUA ARCH AVID CAPE CENT CHAP CLAY CLUE COVE 
+   9    5    7    9    4    6    9    6    2    6    6    4    4    6 
+
+--- scan age, years:ch1 ---
+vals
+2.43 2.52 2.57  2.7 2.98  3.2 3.41 3.58 3.62 4.05 4.21  4.5  n/a 
+   6    9    6    4    9    7   13    6    4    6    6    5    2 
+
+--- total brain volume:ch1 ---
+vals
+1182 1184 1206 1225 1257 1271 1338 1361 1374 1389 1409 1458 1515  n/a 
+   4    6    4    6    9    9    7    6    9    6    6    5    4    2 
+
+--- characteristics_ch1 ---
+vals
+cell type: iPSC-derived neural progenitors 
+                                        30 
+           cell type: iPSC-derived neurons 
+                                        25 
+                          cell type: iPSCs 
+                                        28 
+
+--- characteristics_ch1.1 ---
+vals
+patient id: ABLE patient id: ACAI patient id: AERO patient id: AHOY 
+               9                5                7                9 
+patient id: APEX patient id: AQUA patient id: ARCH patient id: AVID 
+               4                6                9                6 
+patient id: CAPE patient id: CENT patient id: CHAP patient id: CLAY 
+               2                6                6                4 
+patient id: CLUE patient id: COVE 
+               4                6 
+
+--- characteristics_ch1.2 ---
+vals
+    group: ASD group: CONTROL 
+            55             28 
+
+--- characteristics_ch1.3 (33 distinct values; first 10) ---
+ [1] "iPSc clone: ABLE_3_8"  "iPSc clone: ABLE_3_6"  "iPSc clone: ABLE_3_12"
+ [4] "iPSc clone: ACAI_1_1"  "iPSc clone: AERO_3_6"  "iPSc clone: AERO_3_7" 
+ [7] "iPSc clone: AHOY_5_13" "iPSc clone: AHOY_5_4"  "iPSc clone: AHOY_5_19"
+[10] "iPSc clone: APEX_5_4" 
+
+--- characteristics_ch1.4 ---
+vals
+age at biopsy: 16 age at biopsy: 17 age at biopsy: 18 age at biopsy: 20 
+               17                10                 5                 9 
+ age at biopsy: 5  age at biopsy: 6  age at biopsy: 7  age at biopsy: 8 
+                9                 6                 9                12 
+ age at biopsy: 9 
+                6 
+
+--- characteristics_ch1.5 ---
+vals
+gender: Male 
+          83 
+
+--- characteristics_ch1.6 ---
+vals
+total brain volume: 1182 total brain volume: 1184 total brain volume: 1206 
+                       4                        6                        4 
+total brain volume: 1225 total brain volume: 1257 total brain volume: 1271 
+                       6                        9                        9 
+total brain volume: 1338 total brain volume: 1361 total brain volume: 1374 
+                       7                        6                        9 
+total brain volume: 1389 total brain volume: 1409 total brain volume: 1458 
+                       6                        6                        5 
+total brain volume: 1515  total brain volume: n/a 
+                       4                        2 
+
+--- characteristics_ch1.7 ---
+vals
+scan age, years: 2.43 scan age, years: 2.52 scan age, years: 2.57 
+                    6                     9                     6 
+ scan age, years: 2.7 scan age, years: 2.98  scan age, years: 3.2 
+                    4                     9                     7 
+scan age, years: 3.41 scan age, years: 3.58 scan age, years: 3.62 
+                   13                     6                     4 
+scan age, years: 4.05 scan age, years: 4.21  scan age, years: 4.5 
+                    6                     6                     5 
+ scan age, years: n/a 
+                    2 
+
+--- characteristics_ch1.8 ---
+vals
+ados total score at biopsy: 13 (Fluent Speech - Child/Adolescent) 
+                                                                5 
+  ados total score at biopsy: 13 (Fluent Speech -Chld/Adolescent) 
+                                                                6 
+ados total score at biopsy: 16 (Fluent Speech - Child/Adolescent) 
+                                                                6 
+         ados total score at biopsy: 16 (Pre-verbal/Single Words) 
+                                                                9 
+ados total score at biopsy: 18 (Fluent Speech - Adolescent/Adult) 
+                                                                4 
+         ados total score at biopsy: 18 (Pre-verbal/Single Words) 
+                                                                9 
+ados total score at biopsy: 20 (Fluent Speech - Adolescent/Adult) 
+                                                                9 
+ados total score at biopsy: 20 (Fluent Speech - Child/Adolescent) 
+                                                                7 
+                                  ados total score at biopsy: n/a 
+                                                               28 
+
+==================== GSE124308 ====================
+Found 1 file(s)
+GSE124308_series_matrix.txt.gz
+Samples in GEO: 22 | in count matrix: 22 | overlap: 22
+
+--- title ---
+vals
+  ASD 110_135    ASD 110_35   ASD 134_135    ASD 134_35   ASD 691_135 
+            1             1             1             1             1 
+   ASD 691_35   ASD 709_135    ASD 709_35   ASD 725_135    ASD 725_35 
+            1             1             1             1             1 
+  ASD 732_135    ASD 732_35  Cont 101_135   Cont 101_35  Cont 102_135 
+            1             1             1             1             1 
+  Cont 102_35 Cont 1021_135  Cont 1021_35  Cont 114_135   Cont 114_35 
+            1             1             1             1             1 
+ Cont 574_135   Cont 574_35 
+            1             1 
+
+--- source_name_ch1 ---
+vals
+induced pluripotent stem cell-derived cortical neurons 
+                                                    22 
+
+--- description ---
+vals
+day 135 post differentiation  day 35 post differentiation 
+                          11                           11 
+
+--- disease state:ch1 ---
+vals
+            ASD healthy control 
+             12              10 
+
+--- ethnicity:ch1 ---
+vals
+non-hispanic white 
+                22 
+
+--- gender:ch1 ---
+vals
+male 
+  22 
+
+--- iPSc source:ch1 ---
+vals
+                        fibroblast peripheral blood mononuclear cells 
+                                 6                                 16 
+
+--- reprogramming method:ch1 ---
+vals
+  Retrovirus Sendai virus 
+           4           18 
+
+--- tissue:ch1 ---
+vals
+induced pluripotent stem cell-derived cortical neurons 
+                                                    22 
+
+--- characteristics_ch1 ---
+vals
+            disease state: ASD disease state: healthy control 
+                            12                             10 
+
+--- characteristics_ch1.1 ---
+vals
+tissue: induced pluripotent stem cell-derived cortical neurons 
+                                                            22 
+
+--- characteristics_ch1.2 ---
+vals
+                        iPSc source: fibroblast 
+                                              6 
+iPSc source: peripheral blood mononuclear cells 
+                                             16 
+
+--- characteristics_ch1.3 ---
+vals
+  reprogramming method: Retrovirus reprogramming method: Sendai virus 
+                                 4                                 18 
+
+--- characteristics_ch1.4 ---
+vals
+gender: male 
+          22 
+
+--- characteristics_ch1.5 ---
+vals
+ethnicity: non-hispanic white 
+                           22 
+
+Done. Please share the console output (or the two CSVs) so we can decide which fields define donor, clone, stage/time point and sex.

@@ -1,0 +1,4 @@
+held_out,genes,rule,same_direction,share,binom_p,pi1_held_out
+GSE67528_Neuron,500,top 500 by p in the other datasets (fewer than 50 at FDR < 0.05),315,0.63,3.298645558688554e-9,0.14633295827085835
+GSE124308_both,500,top 500 by p in the other datasets (fewer than 50 at FDR < 0.05),311,0.622,2.7039784780130553e-8,0.33807094738241017
+GSE142670_Neuron,500,top 500 by p in the other datasets (fewer than 50 at FDR < 0.05),309,0.618,7.366297663874518e-8,0
