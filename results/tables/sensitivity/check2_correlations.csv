@@ -1,0 +1,6 @@
+pair,spearman_all,spearman_top500
+ASD effect: mixed vs sorted (GSE142670),0.1183313271266063,0.027866415465661862
+ASD effect: other cohorts vs mixed,0.10286055028161077,0.16809225636902547
+ASD effect: other cohorts vs sorted,-0.18208338463226728,-0.3120286081144325
+sorting effect vs ASD effect in other cohorts,0.19336035817882774,0.3744423937695751
+sorting effect vs ASD effect in sorted,-0.3554198999307245,-0.3877275029100116

@@ -1,0 +1,131 @@
+
+==================== CHECK 1: GSE124308 without 101, 102 ====================
+Donors kept by group and iPSC source:
+# A tibble: 3 × 3
+  condition ipsc_source                            n
+  <fct>     <chr>                              <int>
+1 Control   fibroblast                             1
+2 Control   peripheral blood mononuclear cells     2
+3 ASD       peripheral blood mononuclear cells     6
+
+1a. Gene level, full vs without 101/102:
+# A tibble: 1 × 6
+  genes_both spearman_t same_sign_share p_lt_0.05_full p_lt_0.05_reduced
+       <int>      <dbl>           <dbl>          <int>             <int>
+1      17656      0.787           0.791           1629              1201
+  fdr_lt_0.05_reduced
+                <int>
+1                   0
+
+1b. Leave-one-cohort-out replication (neurons, top 500):
+# A tibble: 6 × 6
+  version                   held_out            genes share  p_one_sided
+  <chr>                     <chr>               <int> <dbl>        <dbl>
+1 full GSE124308            GSE67528_Neuron       498 0.629 0.0000000053
+2 full GSE124308            GSE124308_both        465 0.615 0.0000004   
+3 full GSE124308            GSE142670_Neuron      452 0.613 0.00000092  
+4 GSE124308 without 101/102 GSE67528_Neuron       495 0.574 0.00059     
+5 GSE124308 without 101/102 GSE124308_no101_102   470 0.555 0.0093      
+6 GSE124308 without 101/102 GSE142670_Neuron      439 0.579 0.00057     
+  p_two_sided
+        <dbl>
+1 0.000000011
+2 0.0000008  
+3 0.0000018  
+4 0.0012     
+5 0.019      
+6 0.0011     
+
+1c. cameraPR (inter-gene cor 0.05), GSE124308:
+# A tibble: 6 × 4
+  set                                        full          
+  <chr>                                      <chr>         
+1 HALLMARK_INTERFERON_ALPHA_RESPONSE         Down p=0.00051
+2 HALLMARK_INTERFERON_GAMMA_RESPONSE         Down p=0.017  
+3 HALLMARK_MYC_TARGETS_V1                    Up p=0.2      
+4 REACTOME_EUKARYOTIC_TRANSLATION_INITIATION Up p=0.008    
+5 GOBP_AXONEME_ASSEMBLY                      Down p=0.0026 
+6 CURATED_MOTILE_CILIA                       Down p=0.00058
+  `adjusted for iPSC source` `without 101/102`
+  <chr>                      <chr>            
+1 Down p=1.2e-09             Down p=7.3e-11   
+2 Down p=0.00024             Down p=3.8e-05   
+3 Down p=0.0044              Down p=0.21      
+4 Down p=0.14                Up p=0.24        
+5 Down p=0.34                Down p=0.086     
+6 Down p=0.26                Down p=0.032     
+
+==================== CHECK 2: GSE142670 sorted vs mixed neurons ====================
+2a. Samples per donor and stage:
+# A tibble: 10 × 4
+   condition donor Neuron Neuron_sorted
+   <fct>     <fct>  <int>         <int>
+ 1 Control   F5541      1             1
+ 2 Control   F5618      2             1
+ 3 Control   F7647      2             0
+ 4 Control   F7672      2             2
+ 5 ASD       F2613      1             1
+ 6 ASD       F2688      2             0
+ 7 ASD       F2735      2             1
+ 8 ASD       F6136      1             0
+ 9 ASD       F6281      2             1
+10 ASD       F7511      1             0
+Donors with both mixed and sorted neurons: 6 of 10
+
+2b. Composition scores (SD units across all neuron samples; donor means):
+# A tibble: 16 × 6
+   stage         score         mean_ctrl mean_asd diff_asd_minus_ctrl   t_p
+   <fct>         <chr>             <dbl>    <dbl>               <dbl> <dbl>
+ 1 Neuron        gabaergic         -0.57    -0.17              0.4     0.37
+ 2 Neuron_sorted gabaergic          0.36     1                 0.65    0.32
+ 3 Neuron        glia               0.5      0.31             -0.19    0.6 
+ 4 Neuron_sorted glia              -0.79    -0.4               0.39    0.44
+ 5 Neuron        glutamatergic     -0.27    -0.16              0.12    0.65
+ 6 Neuron_sorted glutamatergic      0.41     0.47              0.062   0.48
+ 7 Neuron        motile_cilia       0.19     0.16             -0.038   0.89
+ 8 Neuron_sorted motile_cilia      -0.56    -0.34              0.22    0.59
+ 9 Neuron        neuron            -0.46    -0.44              0.02    0.96
+10 Neuron_sorted neuron             0.88     0.94              0.056   0.88
+11 Neuron        non_neural         0.31     0.32              0.0097  0.98
+12 Neuron_sorted non_neural        -0.87    -0.62              0.25    0.74
+13 Neuron        progenitor         0.59     0.43             -0.16    0.65
+14 Neuron_sorted progenitor        -0.75    -0.88             -0.13    0.84
+15 Neuron        proliferation      0.24     0.62              0.38    0.37
+16 Neuron_sorted proliferation     -1.1     -1                 0.086   0.75
+Sorted minus mixed, same donors (what sorting changes):
+# A tibble: 8 × 3
+  score         mean_shift p_paired
+  <chr>              <dbl>    <dbl>
+1 gabaergic           0.71   0.021 
+2 glia               -1      0.026 
+3 glutamatergic       0.63   0.0064
+4 motile_cilia       -0.76   0.0016
+5 neuron              1.1    0.0038
+6 non_neural         -0.72   0.066 
+7 progenitor         -1.3    0.0036
+8 proliferation      -1.2    0.0032
+
+2c. Fitting sorted vs mixed (~ stage + condition + (1|donor)) ...
+
+2c. Correlations (all genes; and the 500 genes used for replication):
+# A tibble: 5 × 3
+  pair                                          spearman_all spearman_top500
+  <chr>                                                <dbl>           <dbl>
+1 ASD effect: mixed vs sorted (GSE142670)              0.118           0.028
+2 ASD effect: other cohorts vs mixed                   0.103           0.168
+3 ASD effect: other cohorts vs sorted                 -0.182          -0.312
+4 sorting effect vs ASD effect in other cohorts        0.193           0.374
+5 sorting effect vs ASD effect in sorted              -0.355          -0.388
+Top-500 replication genes, split by their direction in the other cohorts:
+# A tibble: 2 × 6
+  asd_dir_other                 genes mean_sorting_t share_depleted_by_sorting
+  <chr>                         <int>          <dbl>                     <dbl>
+1 higher in ASD (other cohorts)   166          0.264                     0.494
+2 lower in ASD (other cohorts)    334         -2.33                      0.793
+  share_same_dir_mixed share_same_dir_sorted
+                 <dbl>                 <dbl>
+1                0.578                 0.458
+2                0.644                 0.26 
+(sorting t < 0 = gene is lower after sorting, i.e. enriched in non-neuronal cells)
+
+Done. Tables in results/tables/sensitivity

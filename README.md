@@ -63,13 +63,14 @@ Further candidates and exclusions are listed in the protocol (Study records). Th
 | Single-gene differential expression | **No gene at FDR < 0.05** in any cohort, or in the 3-cohort random-effects meta-analysis (14,574 genes; smallest p = 0.045) |
 | **Direction replication (neurons)** | Leave-one-cohort-out agreement for the top 500 genes: 61–63% (one-sided binomial p ≤ 9 × 10⁻⁷); 58–69% after neuron-score adjustment |
 | Direction replication (NPCs) | 56–63% (p = 0.02 to 1 × 10⁻⁷) |
-| FACS-sorted GSE142670 neurons | 33% agreement, i.e. **reversed** (two-sided p = 5 × 10⁻¹⁵); cause unresolved |
+| FACS-sorted GSE142670 neurons | 33% agreement, i.e. **reversed** (two-sided p = 5 × 10⁻¹⁵), from only 3 ASD / 3 control donors. Most replicating genes that are lower in ASD are removed by sorting (non-neuronal), so the reversal most likely reflects sorting purity, not opposite neuronal biology |
 | Cell composition | No difference by diagnosis in neuronal or progenitor marker scores |
 | **Cilia (motile programme)** | Lower in ASD in GSE67528 neurons, GSE124308 neurons and GSE142670 NPCs (cameraPR); not in GSE142670 neurons. Adjusting for *FOXJ1* weakens but does not remove the signal |
 | **MYC targets / cell cycle (NPCs)** | Higher in ASD NPCs in both cohorts (cameraPR FDR 4.7 × 10⁻³ and 3.9 × 10⁻⁷) |
-| Interferon | Lower only in GSE124308, the cohort in which iPSC source is confounded with diagnosis |
+| Interferon | Lower in ASD in GSE124308 only. Within that cohort it is robust to adjusting for iPSC source and to excluding the two outlying control donors, but it does not appear in GSE67528 or GSE142670 (cohort-specific) |
+| Sensitivity: GSE124308 without control donors 101/102 | Direction replication still holds (55–58%, p ≤ 0.009) |
 
-**Interpretation.** The signal is a weak but reproducible shift spread across many genes, not a set of large-effect genes. The cilia result most likely reflects how many ciliated (FOXJ1-positive) cells each culture contains. The confirmation stage tests these points in independent data.
+**Interpretation.** The signal is a weak but reproducible shift spread across many genes, not a set of large-effect genes. Much of the part that is lower in ASD sits in genes expressed by non-neuronal cells (they are removed by FACS sorting), and the cilia result most likely reflects how many ciliated (FOXJ1-positive) cells each culture contains. The confirmation stage tests these points in independent data.
 
 Figures: `results/figures/submission/` (Fig 2–4, S1–S5). Draft legends: [`docs/figure_legends_draft.md`](docs/figure_legends_draft.md).
 
@@ -85,7 +86,7 @@ The pilot (archived in `legacy/` and at git tag `pilot-v0`) analysed GSE67528 an
 | **Pseudoreplication**: clones and replicates from the same donor were treated as independent samples | `dream` mixed models with donor as a random effect |
 | **Developmental stages were pooled** (iPSC, NPC and neurons in one model) | Separate analyses for each stage |
 | Gene overlap (Venn diagram) plus random-effects meta-analysis of two cohorts | Pre-specified protocol, 3 discovery cohorts, direction-replication test, correlation-aware gene-set tests (cameraPR) |
-| Confounding of iPSC source with diagnosis in GSE124308 not addressed | Documented, with a sensitivity model that adjusts for source |
+| Confounding of iPSC source with diagnosis in GSE124308 not addressed | Documented; sensitivity analyses that adjust for source and that exclude the two outlying fibroblast-derived control donors (`09_sensitivity_checks.R`) |
 
 ---
 
@@ -112,6 +113,7 @@ All analysis runs in a [pixi](https://pixi.sh) environment (`pixi.toml`; conda-f
 | 07 | `07_figures.R` | First-draft descriptive figures (superseded by 07b) |
 | 07b | `07b_figures_revised.R` | Submission figures: Fig 3, S1–S5 |
 | 08 | `08_main_figures.R` | Submission figures: Fig 2 (H1) and Fig 4 (H2) |
+| 09 | `09_sensitivity_checks.R` | GSE124308 without donors 101/102; sorted vs mixed GSE142670 neurons |
 
 ### How to run
 
@@ -130,7 +132,7 @@ pixi run Rscript scripts/01a_filter_primary_genes.R GSE67528 GSE124308 GSE142670
 pixi run de-dream                                       # 01b (slowest step)
 pixi run de-diagnostics                                 # 01c
 for s in 02_meta_analysis 03_cell_composition 04_pathway_analysis 05_cilia_check \
-         06_cilia_foxj1_adjusted 08_main_figures 07b_figures_revised; do
+         06_cilia_foxj1_adjusted 08_main_figures 07b_figures_revised 09_sensitivity_checks; do
   pixi run bash -c "mkdir -p logs && Rscript scripts/$s.R 2>&1 | tee logs/$s.log"
 done
 ```
@@ -153,7 +155,7 @@ asd_bulk-rnaseq-meta-analysis/
 ├── docs/
 │   ├── protocol_v0.3.pdf, protocol_v1.0.pdf   # protocol versions (frozen)
 │   └── figure_legends_draft.md
-├── scripts/                                   # 00a–08, run in order (see table)
+├── scripts/                                   # 00a–09, run in order (see table)
 ├── legacy/                                    # withdrawn pilot pipeline (read-only)
 ├── data/
 │   ├── annotation/            # Ensembl 115 gene table
