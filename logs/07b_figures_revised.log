@@ -1,0 +1,155 @@
+
+== Fig 3: enrichment dot plot ==
+Warning messages:
+1: In preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
+  There are ties in the preranked stats (0.01% of the list).
+The order of those tied genes will be arbitrary, which may produce unexpected results.
+2: In preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
+  There are ties in the preranked stats (0.06% of the list).
+The order of those tied genes will be arbitrary, which may produce unexpected results.
+3: In preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
+  There are ties in the preranked stats (0.01% of the list).
+The order of those tied genes will be arbitrary, which may produce unexpected results.
+cameraPR FDR < 0.05 (within each column, 12 sets):
+# A tibble: 38 × 5
+   ranking         label                             camera_dir camera_fdr   NES
+   <chr>           <fct>                             <chr>           <dbl> <dbl>
+ 1 GSE67528_Neuron Axoneme assembly (GO:BP)          Down          1.52e-5 -3.23
+ 2 GSE67528_Neuron Cilium movement (GO:BP)           Down          2.67e-3 -2.98
+ 3 GSE67528_Neuron Cilium organization (GO:BP)       Down          4.71e-2 -2.46
+ 4 GSE67528_Neuron Ribosome biogenesis (GO:BP)       Up            5.58e-4  3.25
+ 5 GSE67528_Neuron mTORC1 signalling (Hallmark)      Up            3.83e-2  2.39
+ 6 GSE67528_Neuron MYC targets V1 (Hallmark)         Up            8.06e-5  3.31
+ 7 GSE67528_Neuron DNA replication (Reactome)        Up            1.23e-2  2.51
+ 8 GSE67528_Neuron Translation initiation (Reactome) Up            2.16e-6  3.49
+ 9 GSE124308_both  Axoneme assembly (GO:BP)          Down          1.56e-2 -2.22
+10 GSE124308_both  Interferon-α response (Hallmark)  Down          6.11e-3 -2.59
+11 GSE124308_both  Translation initiation (Reactome) Up            3.21e-2  2.48
+12 GSE67528_NPC    E2F targets (Hallmark)            Up            4.72e-3  2.89
+13 GSE67528_NPC    G2/M checkpoint (Hallmark)        Up            1.11e-2  2.71
+14 GSE67528_NPC    MYC targets V1 (Hallmark)         Up            4.72e-3  2.91
+15 GSE67528_NPC    DNA replication (Reactome)        Up            2.89e-2  2.39
+16 GSE67528_NPC    Translation initiation (Reactome) Down          1.19e-2 -2.46
+17 GSE142670_NPC   Axoneme assembly (GO:BP)          Down          1.40e-4 -2.90
+18 GSE142670_NPC   Cilium movement (GO:BP)           Down          2.67e-2 -2.34
+19 GSE142670_NPC   Ribosome biogenesis (GO:BP)       Up            4.22e-5  3.44
+20 GSE142670_NPC   E2F targets (Hallmark)            Up            2.90e-2  2.33
+21 GSE142670_NPC   mTORC1 signalling (Hallmark)      Up            7.53e-5  3.17
+22 GSE142670_NPC   MYC targets V1 (Hallmark)         Up            3.86e-7  3.67
+23 GSE142670_NPC   DNA replication (Reactome)        Up            1.70e-3  2.85
+24 GSE142670_NPC   Translation initiation (Reactome) Up            3.86e-7  3.40
+25 pooled_neuron   Axoneme assembly (GO:BP)          Down          1.35e-5 -2.99
+26 pooled_neuron   Cilium movement (GO:BP)           Down          2.92e-3 -2.81
+27 pooled_neuron   Cilium organization (GO:BP)       Down          2.40e-2 -2.50
+28 pooled_neuron   Ribosome biogenesis (GO:BP)       Up            4.81e-2  2.38
+29 pooled_neuron   Interferon-α response (Hallmark)  Down          2.40e-2 -2.11
+30 pooled_neuron   MYC targets V1 (Hallmark)         Up            2.40e-2  2.65
+31 pooled_neuron   Translation initiation (Reactome) Up            9.55e-5  3.48
+32 pooled_npc      Axoneme assembly (GO:BP)          Down          5.44e-3 -2.49
+33 pooled_npc      Ribosome biogenesis (GO:BP)       Up            3.85e-4  3.01
+34 pooled_npc      E2F targets (Hallmark)            Up            1.04e-3  2.87
+35 pooled_npc      G2/M checkpoint (Hallmark)        Up            8.30e-3  2.54
+36 pooled_npc      mTORC1 signalling (Hallmark)      Up            3.85e-4  2.89
+37 pooled_npc      MYC targets V1 (Hallmark)         Up            2.81e-7  3.55
+38 pooled_npc      DNA replication (Reactome)        Up            3.85e-4  2.83
+  saved Fig3_enrichment_dotplot (.pdf, .png)
+
+== Fig S1: PCA panel ==
+GSE124308 donors by iPSC source, with mean PC2:
+# A tibble: 11 × 4
+   donor condition ipsc_source                        mean_PC2
+   <chr> <fct>     <chr>                                 <dbl>
+ 1 102   Control   fibroblast                             33.9
+ 2 101   Control   fibroblast                             32.6
+ 3 709   ASD       peripheral blood mononuclear cells      8.3
+ 4 134   ASD       peripheral blood mononuclear cells      7.8
+ 5 110   ASD       peripheral blood mononuclear cells      5.9
+ 6 725   ASD       peripheral blood mononuclear cells      0.5
+ 7 732   ASD       peripheral blood mononuclear cells     -1.1
+ 8 1021  Control   fibroblast                            -18.5
+ 9 691   ASD       peripheral blood mononuclear cells    -18.5
+10 114   Control   peripheral blood mononuclear cells    -20.6
+11 574   Control   peripheral blood mononuclear cells    -30.3
+Correlation of PC1/PC2 with proliferation (E2F + MYC V1) and motile-cilia scores:
+# A tibble: 5 × 7
+  dataset          PC1_var PC2_var r_PC1_prolif r_PC2_prolif r_PC1_motile
+  <chr>              <dbl>   <dbl>        <dbl>        <dbl>        <dbl>
+1 GSE67528_Neuron     19      15.6         0.06        -0.44         0.52
+2 GSE124308_both      35.5    14.5        -0.54        -0.4          0.84
+3 GSE142670_Neuron    32      16.1         0.54         0.17        -0.42
+4 GSE67528_NPC        29.8    13.6        -0.36         0.39        -0.48
+5 GSE142670_NPC       27.4    14.9         0.34         0.47        -0.21
+  r_PC2_motile
+         <dbl>
+1        -0.1 
+2         0.2 
+3        -0.48
+4        -0.2 
+5        -0.82
+`geom_line()`: Each group consists of only one observation.
+ℹ Do you need to adjust the group aesthetic?
+`geom_line()`: Each group consists of only one observation.
+ℹ Do you need to adjust the group aesthetic?
+  saved FigS1_PCA_panel (.pdf, .png)
+
+== Fig S2: heatmap ==
+Genes with p < 0.05 per column (of 40):
+# A tibble: 4 × 2
+  dataset           genes_p_lt_0.05
+  <fct>                       <int>
+1 GSE67528 neurons               19
+2 GSE124308 neurons              33
+3 GSE142670 neurons               5
+4 GSE142670 NPC                   3
+Cilia-annotated genes in the top 40: 5
+  saved FigS2_heatmap_top40 (.pdf, .png)
+
+== Fig S3: UpSet ==
+Same-direction overlaps of the top 500 genes (universe = 14574):
+# A tibble: 4 × 6
+  intersection                                             observed expected
+  <chr>                                                       <int>    <dbl>
+1 GSE67528 neurons ∩ GSE124308 neurons                           10    8.42 
+2 GSE67528 neurons ∩ GSE142670 neurons                            8    8.58 
+3 GSE124308 neurons ∩ GSE142670 neurons                          17    9.06 
+4 GSE67528 neurons ∩ GSE124308 neurons ∩ GSE142670 neurons        0    0.153
+  ratio perm_p_greater universe
+  <dbl>          <dbl>    <int>
+1 1.19         0.336      14574
+2 0.932        0.624      14574
+3 1.88         0.00850    14574
+4 0            1          14574
+Warning messages:
+1: `aes_string()` was deprecated in ggplot2 3.0.0.
+ℹ Please use tidy evaluation idioms with `aes()`.
+ℹ See also `vignette("ggplot2-in-packages")` for more information.
+ℹ The deprecated feature was likely used in the UpSetR package.
+  Please report the issue at <https://github.com/hms-dbmi/UpSetR/issues>. 
+2: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.
+ℹ The deprecated feature was likely used in the UpSetR package.
+  Please report the issue at <https://github.com/hms-dbmi/UpSetR/issues>. 
+3: The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.
+ℹ Please use the `linewidth` argument instead.
+ℹ The deprecated feature was likely used in the UpSetR package.
+  Please report the issue at <https://github.com/hms-dbmi/UpSetR/issues>. 
+  saved FigS3_upset_top500 (.pdf, .png); A/B/C = GSE67528 neurons / GSE124308 neurons / GSE142670 neurons
+
+== Fig S4: STRING network ==
+Network: 37 of 60 input genes have >= 1 edge; 219 interactions (STRING score >= 0.7)
+  saved FigS4_string_network_exploratory (.pdf, .png)
+Warning message:
+The `file` argument of `read_tsv()` should use `I()` for literal data as of
+readr 2.2.0.
+  
+  # Bad (for example):
+  read_csv("x,y\n1,2")
+  
+  # Good:
+  read_csv(I("x,y\n1,2")) 
+
+== Fig S5: meta-analysis volcano ==
+  saved FigS5_volcano_meta_neurons (.pdf, .png)
+Genes tested: 14574; smallest p: 0.045; FDR < 0.05: 0; motile-cilia genes with est < 0: 41/42
+
+Done. Figures in results/figures/submission

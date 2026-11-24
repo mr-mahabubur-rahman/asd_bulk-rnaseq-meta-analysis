@@ -1,0 +1,25 @@
+set,analysis,version,camera_dir,camera_p,p_lower_one_sided,NES
+Primary-cilia set (comparison),GSE67528_Neuron,Unadjusted,Down,0.0301825998303534,0.0150912999151767,-1.972456170749227
+Motile-cilia set (H2 primary test),GSE67528_Neuron,Unadjusted,Down,4.126911678575965e-9,2.0634558392879827e-9,-3.1870611251753824
+Primary-cilia set (comparison),GSE67528_Neuron,+ FOXJ1,Down,0.5755437164252764,0.2877718582126382,-0.8834973317509826
+Motile-cilia set (H2 primary test),GSE67528_Neuron,+ FOXJ1,Down,0.001197068240644,5.98534120322e-4,-2.6005106229408583
+Primary-cilia set (comparison),GSE67528_Neuron,+ motile-cilia score (circular check),Up,0.3259067794587457,0.8370466102706271,1.3140166122182415
+Motile-cilia set (H2 primary test),GSE67528_Neuron,+ motile-cilia score (circular check),Up,0.7191562328311212,0.6404218835844394,0.8832647256187534
+Primary-cilia set (comparison),GSE124308_both,Unadjusted,Down,0.00225677217916349,0.001128386089581745,-2.2438635586078357
+Motile-cilia set (H2 primary test),GSE124308_both,Unadjusted,Down,5.84019934751982e-4,2.92009967375991e-4,-2.387577351852585
+Primary-cilia set (comparison),GSE124308_both,+ FOXJ1,Down,0.0961015783440385,0.04805078917201925,-1.6279340433917742
+Motile-cilia set (H2 primary test),GSE124308_both,+ FOXJ1,Down,0.2595656718297096,0.1297828359148548,-1.187388007817241
+Primary-cilia set (comparison),GSE124308_both,+ motile-cilia score (circular check),Down,0.10704573678749683,0.05352286839374842,-1.708685439517191
+Motile-cilia set (H2 primary test),GSE124308_both,+ motile-cilia score (circular check),Down,0.5794167999050152,0.2897083999525076,-0.8850965293612655
+Primary-cilia set (comparison),GSE142670_Neuron,Unadjusted,Down,0.4208734678017001,0.21043673390085005,-1.3524447857640738
+Motile-cilia set (H2 primary test),GSE142670_Neuron,Unadjusted,Down,0.7340460964214441,0.36702304821072207,-0.6921433912755305
+Primary-cilia set (comparison),GSE142670_Neuron,+ FOXJ1,Down,0.595023872064194,0.297511936032097,-1.028249479936665
+Motile-cilia set (H2 primary test),GSE142670_Neuron,+ FOXJ1,Up,0.20392958817572837,0.8980352059121358,1.5229679098113516
+Primary-cilia set (comparison),GSE142670_Neuron,+ motile-cilia score (circular check),Down,0.5301788868503855,0.26508944342519275,-1.2752782196509065
+Motile-cilia set (H2 primary test),GSE142670_Neuron,+ motile-cilia score (circular check),Up,0.6871034981349787,0.6564482509325107,0.9262802287234012
+Primary-cilia set (comparison),GSE142670_NPC,Unadjusted,Down,0.00342447004779982,0.00171223502389991,-2.416588412783366
+Motile-cilia set (H2 primary test),GSE142670_NPC,Unadjusted,Down,5.4922594587043135e-5,2.7461297293521568e-5,-2.5797202467414095
+Primary-cilia set (comparison),GSE142670_NPC,+ FOXJ1,Down,0.00417098311825822,0.00208549155912911,-2.514999798526389
+Motile-cilia set (H2 primary test),GSE142670_NPC,+ FOXJ1,Down,0.00667595150065407,0.003337975750327035,-2.0184100172848325
+Primary-cilia set (comparison),GSE142670_NPC,+ motile-cilia score (circular check),Down,0.1847068564997074,0.0923534282498537,-1.4360067281552915
+Motile-cilia set (H2 primary test),GSE142670_NPC,+ motile-cilia score (circular check),Down,0.638540945626475,0.3192704728132375,-0.9176127233820696
